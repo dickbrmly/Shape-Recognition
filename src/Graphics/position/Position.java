@@ -6,15 +6,17 @@ public class Position
   public int row;
 
   public Position() { }
+
   public Position(int x, int y)
   {
-    this.column = x;
-    this.row = y;
+    column = x;
+    row = y;
   }
+
   Position(Position there)
   {
-    this.column = there.column;
-    this.row = there.row;
+    column = there.column;
+    row = there.row;
   }
   public Position getPosition() { return this; }
 }

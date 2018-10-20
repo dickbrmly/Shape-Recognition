@@ -13,8 +13,6 @@ public class Picture
   public int height;
   public int colorCount;
 
-  private static Picture ourInstance = new Picture();
-
   public static Picture getInstance()
   {
     return ourInstance;
