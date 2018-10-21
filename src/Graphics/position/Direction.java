@@ -32,12 +32,18 @@ public class Direction extends Position
     row = there.row;
   }
 
-  public  boolean notEqual(Direction that)
+  public  boolean equal(Direction that)
   {
     if(this.quad == that.quad)
       if(this.column == that.column)
         if(this.row == that.row)
           return true;
         return  false;
+  }
+  public boolean edge(int width, int height)
+  {
+    if(this.column > 0 && this.row > 0 && this.column < width && this.row < height)
+      return false;
+    else return true;
   }
 }
