@@ -14,8 +14,8 @@ public class Object
   double distribution;
   Direction move = new Direction();
 
-  Stack<Position> component = new Stack<Position>();
-  //Stack<Direction> edge = new Stack<~>();
+  Stack<Position> edge = new Stack<Position>();
+
   int surfaces;  //how many surfaces on the object?  Consider a line has one, a square has four etc...
 
   Object nextObject;
@@ -58,83 +58,55 @@ public class Object
 
     // We assume the previous position was back one column unless this is a left-most position.
     // We are looking for a surface pixel in a clockwise pattern.
+
+    int pointer = 0;
+//***********************************************************************************************************
     while (!move.notEqual(beginning))
     { // There are one of seven possible moves
-//***********************************************************************************************************
+
+      switch (pointer % 7)
+      {
+        case 0:
+          move.column = ceiling(move.column - 1, 0);
+          move.row = ceiling(move.row - 1, 0);
+          move.quad = 4;
+          break;
+        case 1:
+          move.column = floor(move.column + 1,picture.width);
+          move.quad = 3;
+          break;
+        case 2:
+          move.column = floor(move.column + 1,picture.width);
+          move.quad = 2;
+          break;
+        case 3:
+          move.row = floor(move.row + 1,picture.height);
+          move.quad = 1;
+          break;
+        case 4:
+          move.row = floor(move.row + 1,picture.height);
+          move.quad = 8;
+          break;
+        case 5:
+          move.column = ceiling(move.column - 1, 0);
+          move.quad = 7;
+          break;
+        case 6:
+          move.column = ceiling(move.column - 1, 0);
+          move.quad = 6;
+          break;
+        default:
+          move.row = ceiling(move.row - 1, 0);
+          move.quad = 5;
+          break;
+      }
+      if (picture.reader.getColor(move.column,move.row).equals(color.getColor()))
+      {
+          edge.push(move);
+          pointer = 0;
+      }   else  pointer++;
 
       
-
-
-
-
-
-
-
-      if (picture.reader.getColor(ceiling(move.column - 1,0),ceiling(move.row - 1,0)).equals(color.getColor()))
-      { //4
-        if(move.column == 0 && move.row == 0)
-        { //
-          move.column = move.column + 1;
-          move.quad = 1;
-        }
-        else if(move.row == 0)
-        { //
-          move.column = move.column + 1;
-          move.quad = 1;
-        }
-        else if(move.column == 0)
-        { //
-          move.row = move.row - 1;
-          move.quad = 3;
-        }
-        else
-        {
-          move.column = move.column - 1;
-          move.row = move.row - 1;
-          move.quad = 4;
-        }
-      }
-      else if (picture.reader.getColor(move.column, ceiling(move.row - 1,0)).equals(color.getColor()))
-      { //3
-        move.row = move.row - 1;
-        move.quad = 3;
-      }
-      else if (picture.reader.getColor(floor(move.column + 1,picture.width), ceiling(move.row - 1,0)).
-          equals(color.getColor()))
-      { //2
-        move.column = move.column + 1;
-        move.row = move.row - 1;
-        move.quad = 2;
-      }
-      else if (picture.reader.getColor(floor(move.column + 1,picture.width), move.row).equals(color.getColor()))
-      { //1
-        move.column = move.column + 1;
-        move.quad = 1;
-      }
-      else if (picture.reader.getColor(floor(move.column + 1,picture.width), floor(move.row + 1,picture.height)).
-          equals(color.getColor()))
-      { //8
-        move.column = move.column + 1;
-        move.row = move.row + 1;
-        move.quad = 8;
-      }
-      else if (picture.reader.getColor(move.column, floor(move.row + 1,picture.height)).equals(color.getColor()))
-      { //7
-        move.row = move.row + 1;
-        move.quad = 7;
-      }
-      else if (picture.reader.getColor(ceiling(move.column - 1,0), floor(move.row + 1,picture.height)).
-          equals(color.getColor()))
-      { //6
-        move.column = move.column - 1;
-        move.row = move.row + 1;
-        move.quad = 6;
-      }
-      else
-      { //5 Move forward
-        move.column = move.column + 1;
-        move.quad = 1;
-      }
 //***********************************************************************************************************
 // Is it the one of the outer four walls?
       if (move.column < leftMost.column)
