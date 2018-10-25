@@ -78,49 +78,48 @@ public class Object {
         while (incompleteScan)
         { // There are one of seven possible moves
             temp.makeEqual(move);
-            switch (pointer % 7) {
-                case 0:
+
+            switch (move.quad) {
+                case 1:
                     move.column = move.column - 1;
                     move.row = move.row - 1;
-                    move.quad = 4;
-                    break;
-                case 1:
-                    move.row = move.row - 1;
-                    move.quad = 3;
+                    move.quad = 6;
                     break;
                 case 2:
-                    move.column = move.column + 1;
                     move.row = move.row - 1;
-                    move.quad = 2;
+                    move.quad = 7;
                     break;
                 case 3:
                     move.column = move.column + 1;
-                    move.quad = 1;
-                   break;
-                case 4:
-                    move.column = move.column + 1;
-                    move.row = move.row + 1;
+                    move.row = move.row - 1;
                     move.quad = 8;
                     break;
+                case 4:
+                    move.column = move.column + 1;
+                    move.quad = 1;
+                   break;
                 case 5:
+                    move.column = move.column + 1;
                     move.row = move.row + 1;
-                    move.quad = 7;
+                    move.quad = 2;
                     break;
                 case 6:
+                    move.row = move.row + 1;
+                    move.quad = 3;
+                    break;
+                case 7:
                     move.column = move.column -1;
                     move.row = move.row + 1;
-                    move.quad = 6;
+                    move.quad = 4;
                     break;
                 default:
                     move.column = move.column - 1;
                     move.quad = 5;
                     break;
             }
-            if (checkMove(move)) pointer = 0;
-            else
-                {
-                    pointer++;
-                    move.makeEqual(temp);
+            if (!checkMove(move)) {
+                move.makeEqual(temp);
+                move.quad++;
                 }
 //***********************************************************************************************************
 // Is it the one of the outer four walls?
@@ -140,9 +139,9 @@ public class Object {
                 topMost.quad = move.quad;
             }
             if (move.row > btmMost.row) {
-                leftMost.column = move.column;
-                leftMost.row = move.row;
-                leftMost.quad = move.quad;
+                btmMost.column = move.column;
+                btmMost.row = move.row;
+                btmMost.quad = move.quad;
             }
             if (move.equal(beginning)) incompleteScan = false;
 //***********************************************************************************************************

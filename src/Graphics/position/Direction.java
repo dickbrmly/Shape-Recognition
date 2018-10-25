@@ -7,9 +7,9 @@ public class Direction extends Position
   // change from a pixel position is therefore in pi/4 radian increments.
   /*
    *       Example single pixel move.
-   *               4 3 2
-   *               5 x 1
    *               6 7 8
+   *               5 x 1
+   *               4 3 2
    * */
   public Direction()
   {
