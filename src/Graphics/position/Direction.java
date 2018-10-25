@@ -2,9 +2,9 @@ package Graphics.position;
 
 public class Direction extends Position
 {
-  public int quad; //There re four quadrants in a circle and eight half quadrants.  It so happens that there
-  //are eight pixel positions from a pixel position as well. The angular change from a pixel
-  //pixel position is therefore in pi/4 radian increments.
+  public int quad; //There are four quadrants in a circle and eight half quadrants.  It so
+  // happens that there are eight pixel positions from a pixel position as well. The angular
+  // change from a pixel position is therefore in pi/4 radian increments.
   /*
    *       Example single pixel move.
    *               4 3 2
@@ -32,18 +32,28 @@ public class Direction extends Position
     row = there.row;
   }
 
+  public void makeEqual(Direction that)
+  {
+    this.quad = that.quad;
+    this.column = that.column;
+    this.row = that.row;
+  }
   public  boolean equal(Direction that)
   {
-    if(this.quad == that.quad)
-      if(this.column == that.column)
-        if(this.row == that.row)
-          return true;
-        return  false;
+    if(this.quad == that.quad && this.column == that.column && this.row == that.row)
+      return true;
+    else return  false;
   }
-  public boolean edge(int width, int height)
+  public boolean overEdge(int width, int height)
+  { //determine if the position is on an edge
+    if(this.column < 0 || this.row < 0 || this.column > width || this.row > height)
+      return true;
+    else return false;
+  }
+  public boolean zeros()
   {
-    if(this.column > 0 && this.row > 0 && this.column < width && this.row < height)
-      return false;
-    else return true;
+      if(this.column == 0 || this.row == 0)
+          return true;
+      else return false;
   }
 }

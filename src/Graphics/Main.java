@@ -18,8 +18,8 @@ public class Main extends Application
   public void init()
   {
     picture.img = new Image("file:src/Graphics/Pictures/pic.gif");
-    picture.width = (int) picture.img.getWidth();
-    picture.height = (int) picture.img.getHeight();
+    picture.width = (int) picture.img.getWidth() - 1;
+    picture.height = (int) picture.img.getHeight() - 1;
     picture.reader = picture.img.getPixelReader();
     picture.colorCount = 0;
   }

@@ -10,8 +10,10 @@ import java.util.Stack;
 public class Object {
     Picture picture = Picture.getInstance();
 
+    boolean incompleteScan = true;
     double distribution;
     Direction move = new Direction();
+    Palete color;
 
     Stack<Position> edge = new Stack<Position>();
 
@@ -38,6 +40,7 @@ public class Object {
 
     public Object(Palete color, Position position) {
 
+        this.color = color;
         move.quad = 1;
         move.column = position.column;
         move.row = position.row;
@@ -50,57 +53,75 @@ public class Object {
         Direction rightMost = new Direction(move);
         Direction topMost = new Direction(move);
         Direction btmMost = new Direction(move);
-        boolean incompleteScan = true;
-        workEdges(beginning, move);
+        Direction temp = new Direction();
+        edge.push(new Direction(move)); //store starting pixel
+        if(move.zeros()) {
+            if (picture.reader.getColor(move.column + 1, move.row).equals(color.getColor())){
+                move.column++;
+                edge.push(new Direction(move));
+            }
+            else if (picture.reader.getColor(move.column + 1, move.row + 1).equals(color.getColor())) {
+                move.column++;
+                move.row++;
+                edge.push(new Direction(move));
+            }
+            else {
+                move.row++;
+                edge.push(new Direction(move));
+            }
+        }
+        int pointer = 0;
 
         // We assume the previous position was back one column unless this is a left-most position.
         // We are looking for a surface pixel in a clockwise pattern.
-
-        int pointer = 0;
 //***********************************************************************************************************
-        while (incompleteScan) { // There are one of seven possible moves
-
+        while (incompleteScan)
+        { // There are one of seven possible moves
+            temp.makeEqual(move);
             switch (pointer % 7) {
                 case 0:
-                    move.column = ceiling(move.column - 1, 0);
-                    move.row = ceiling(move.row - 1, 0);
+                    move.column = move.column - 1;
+                    move.row = move.row - 1;
                     move.quad = 4;
                     break;
                 case 1:
-                    move.column = floor(move.column + 1, picture.width);
+                    move.row = move.row - 1;
                     move.quad = 3;
                     break;
                 case 2:
-                    move.column = floor(move.column + 1, picture.width);
+                    move.column = move.column + 1;
+                    move.row = move.row - 1;
                     move.quad = 2;
                     break;
                 case 3:
-                    move.row = floor(move.row + 1, picture.height);
+                    move.column = move.column + 1;
                     move.quad = 1;
-                    break;
+                   break;
                 case 4:
-                    move.row = floor(move.row + 1, picture.height);
+                    move.column = move.column + 1;
+                    move.row = move.row + 1;
                     move.quad = 8;
                     break;
                 case 5:
-                    move.column = ceiling(move.column - 1, 0);
+                    move.row = move.row + 1;
                     move.quad = 7;
                     break;
                 case 6:
-                    move.column = ceiling(move.column - 1, 0);
+                    move.column = move.column -1;
+                    move.row = move.row + 1;
                     move.quad = 6;
                     break;
                 default:
-                    move.row = ceiling(move.row - 1, 0);
+                    move.column = move.column - 1;
                     move.quad = 5;
                     break;
             }
-            if (picture.reader.getColor(move.column, move.row).equals(color.getColor())) {
-                edge.push(move);
-                pointer = 0;
-            } else pointer++;
-
-            if(move.equal(beginning)) incompleteScan = false;
+            if (checkMove(move)) pointer = 0;
+            else
+                {
+                    pointer++;
+                    move.makeEqual(temp);
+                }
 //***********************************************************************************************************
 // Is it the one of the outer four walls?
             if (move.column < leftMost.column) {
@@ -123,13 +144,20 @@ public class Object {
                 leftMost.row = move.row;
                 leftMost.quad = move.quad;
             }
+            if (move.equal(beginning)) incompleteScan = false;
 //***********************************************************************************************************
         }
 //   picture.writer.setColor(position.column,position.row,color);
     }
-    void workEdges(Direction start,Direction position)
-    {
-        if(!move.edge(picture.width,picture.height)) return;
 
+    boolean checkMove(Direction move)
+    {
+        if (move.overEdge(picture.width, picture.height)) return false;
+        if (picture.reader.getColor(move.column, move.row).equals(color.getColor()))
+        {
+            edge.push(new Direction(move));
+            return true;
+        }
+        return false;
     }
 }

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/Graphics/position/Direction.java" line="49" />
+    <bookmark url="file://$PROJECT_DIR$/src/Graphics/position/Direction.java" line="59" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4833072-afbb-4fb5-964a-9b5a7fd3f248" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/dickb.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaFxApplication/Graphics/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaFxApplication/Graphics/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaFxApplication/Graphics/Mother.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaFxApplication/Graphics/Mother.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JavaFxApplication/Graphics/Object.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaFxApplication/Graphics/Object.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaFxApplication/Graphics/Pictures/Picture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaFxApplication/Graphics/Pictures/Picture.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graphics/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graphics/Mother.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/Mother.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Graphics/Object.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/Object.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Graphics/Pictures/Picture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/Pictures/Picture.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Graphics/position/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/position/Direction.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,8 +28,8 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/Graphics/position/Direction.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="966">
-                    <caret line="46" selection-start-line="46" selection-end-line="46" />
+                  <state relative-caret-position="1176">
+                    <caret line="56" column="24" lean-forward="true" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
                   </state>
                 </provider>
               </entry>
@@ -86,51 +87,53 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="7084" />
-          <entry key="txt" value="81" />
+          <entry key="java" value="8481" />
+          <entry key="txt" value="101" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="7084" />
-          <entry key="PLAIN_TEXT" value="81" />
+          <entry key="JAVA" value="8481" />
+          <entry key="PLAIN_TEXT" value="101" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="class" value="1" />
           <entry key="gif" value="1" />
-          <entry key="java" value="52" />
+          <entry key="java" value="59" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="CLASS" value="1" />
           <entry key="Image" value="1" />
-          <entry key="JAVA" value="52" />
+          <entry key="JAVA" value="59" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
         <counts>
-          <entry key="git.branch.create.new" value="1" />
+          <entry key="git.branch.create.new" value="2" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Graphics/Object.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Graphics/Pictures/Picture.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1357">
-              <caret line="133" selection-start-line="133" selection-end-line="133" />
+            <state relative-caret-position="210">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Graphics/Pictures/Picture.java">
+        <entry file="file://$PROJECT_DIR$/src/Graphics/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="294">
-              <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+              <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -138,8 +141,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Graphics/Mother.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="9" column="7" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="46" />
+            <state relative-caret-position="1154">
+              <caret line="61" selection-start-line="61" selection-end-line="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Graphics/position/Palete.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Graphics/Object.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+              <folding>
+                <element signature="e#404#414#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/scene/image/Image.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="1188" selection-start-line="1188" selection-end-line="1188" />
             </state>
           </provider>
         </entry>
@@ -165,7 +198,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="OutliningTwo" />
       </map>
     </option>
   </component>
@@ -176,11 +209,11 @@
         <option value="$PROJECT_DIR$/src/Graphics/Controller.java" />
         <option value="$PROJECT_DIR$/src/Graphics/Picture.java" />
         <option value="$PROJECT_DIR$/src/Graphics/position/Point.java" />
-        <option value="$PROJECT_DIR$/src/Graphics/Main.java" />
-        <option value="$PROJECT_DIR$/src/Graphics/position/Palete.java" />
-        <option value="$PROJECT_DIR$/src/Graphics/Mother.java" />
         <option value="$PROJECT_DIR$/src/Graphics/position/Position.java" />
         <option value="$PROJECT_DIR$/src/Graphics/Pictures/Picture.java" />
+        <option value="$PROJECT_DIR$/src/Graphics/Main.java" />
+        <option value="$PROJECT_DIR$/src/Graphics/Mother.java" />
+        <option value="$PROJECT_DIR$/src/Graphics/position/Palete.java" />
         <option value="$PROJECT_DIR$/src/Graphics/position/Direction.java" />
         <option value="$PROJECT_DIR$/src/Graphics/Object.java" />
       </list>
@@ -192,11 +225,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="x" value="-2730" />
-    <option name="y" value="-519" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-1088" />
+    <option name="y" value="-505" />
+    <option name="width" value="1096" />
+    <option name="height" value="1896" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -336,7 +369,7 @@
     <property name="SearchEverywhereHistoryKey" value="*Column&#9;PSI&#9;JAVA://javafx.scene.control.TableColumn&#10;Position.column&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540129675029" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540459685181" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
@@ -410,14 +443,21 @@
       <option name="project" value="LOCAL" />
       <updated>1540118509446</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added edge detection">
+      <created>1540129698984</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1540129698984</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="58871000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2160" y="-498" width="1080" height="1920" extended-state="6" />
+    <frame x="-1088" y="-505" width="1096" height="1896" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.21525097" />
@@ -431,7 +471,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.14123377" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.20147559" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -439,7 +479,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.13123645" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.2012987" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.20039682" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -491,23 +531,40 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First shot at scanning for an object" />
     <MESSAGE value="Outlining using a switch with less moves" />
-    <option name="LAST_COMMIT_MESSAGE" value="Outlining using a switch with less moves" />
+    <MESSAGE value="added edge detection" />
+    <option name="LAST_COMMIT_MESSAGE" value="added edge detection" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Graphics/Mother.java</url>
+          <line>69</line>
+          <properties />
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Graphics/Object.java</url>
+          <line>80</line>
+          <properties />
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Graphics/Object.java</url>
+          <line>56</line>
+          <properties />
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Graphics/position/TwoD.java" />
     <entry file="file://$PROJECT_DIR$/src/Graphics/ColorPalete.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/com/sun/javafx/application/LauncherImpl.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/scene/paint/Color.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="160" selection-start-line="160" selection-end-line="160" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/scene/image/Image.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="1199" selection-start-line="1199" selection-end-line="1199" />
         </state>
       </provider>
     </entry>
@@ -522,20 +579,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="549">
           <caret line="68" column="24" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Graphics/position/Palete.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Graphics/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -556,31 +599,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Graphics/Mother.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/rt.jar!/java/security/AccessController.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="46" />
+        <state relative-caret-position="315">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/com/sun/javafx/application/PlatformImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="294" selection-start-line="294" selection-end-line="294" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/com/sun/javafx/application/LauncherImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="862" selection-start-line="862" selection-end-line="862" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/scene/image/Image.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="1188" selection-start-line="1188" selection-end-line="1188" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Graphics/Pictures/Picture.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graphics/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
-          <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+          <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graphics/position/Palete.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graphics/Mother.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1154">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Graphics/position/Direction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="966">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        <state relative-caret-position="1176">
+          <caret line="56" column="24" lean-forward="true" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Graphics/Object.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1357">
-          <caret line="133" selection-start-line="133" selection-end-line="133" />
+        <state relative-caret-position="75">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+          <folding>
+            <element signature="e#404#414#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

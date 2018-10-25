@@ -58,12 +58,15 @@ public class Mother
     * */
     position.column = 0;
     position.row = 0;
-    Palete lastColor = new Palete(picture.reader.getColor(position.column,position.row));
+    Palete lastColor = new Palete();
     Object current = new Object(lastColor, position);
 
-    for (position.row = 0; position.row < picture.height; position.row++) {
-      for (position.column = 0; position.column < picture.width; position.column++) {
-        if (!picture.reader.getColor(position.column, position.row).equals(lastColor)) {
+    for (position.row = 0; position.row < picture.height; position.row++)
+    {
+      for (position.column = 0; position.column < picture.width; position.column++)
+      {
+        if (!picture.reader.getColor(position.column, position.row).equals(lastColor.getColor()))
+        {
           lastColor.setColor(picture.reader.getColor(position.column, position.row));
           Object object = new Object(lastColor, position);
           //current.nextObject = object;
