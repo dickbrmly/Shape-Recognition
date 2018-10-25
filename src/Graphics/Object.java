@@ -108,7 +108,7 @@ public class Object {
                     move.quad = 3;
                     break;
                 case 7:
-                    move.column = move.column -1;
+                    move.column = move.column - 1;
                     move.row = move.row + 1;
                     move.quad = 4;
                     break;
@@ -119,7 +119,7 @@ public class Object {
             }
             if (!checkMove(move)) {
                 move.makeEqual(temp);
-                move.quad++;
+                if(++move.quad > 8) move.quad = 1;
                 }
 //***********************************************************************************************************
 // Is it the one of the outer four walls?
