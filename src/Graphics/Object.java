@@ -7,7 +7,14 @@ import Graphics.position.Position;
 
 import java.util.Stack;
 
-public class Object {
+public class Object implements java.io.Serializable {
+
+    Direction leftMost;
+    Direction rightMost;
+    Direction topMost;
+    Direction btmMost;
+    Direction temp;
+
     Picture picture = Picture.getInstance();
 
     boolean incompleteScan = true;
@@ -49,11 +56,12 @@ public class Object {
 
         /* The rectangle made here would copy our object from the picture
          * */
-        Direction leftMost = new Direction(move);
-        Direction rightMost = new Direction(move);
-        Direction topMost = new Direction(move);
-        Direction btmMost = new Direction(move);
-        Direction temp = new Direction();
+        leftMost = new Direction(move);
+        rightMost = new Direction(move);
+        topMost = new Direction(move);
+        btmMost = new Direction(move);
+        temp = new Direction();
+
         edge.push(new Direction(move)); //store starting pixel
         if(move.zeros()) {
             if (picture.reader.getColor(move.column + 1, move.row).equals(color.getColor())){
@@ -146,7 +154,8 @@ public class Object {
             if (move.equal(beginning)) incompleteScan = false;
 //***********************************************************************************************************
         }
-//   picture.writer.setColor(position.column,position.row,color);
+        distribution = (double)(btmMost.row - topMost.row) * (rightMost.column - leftMost.column) /
+                picture.width / picture.height;
     }
 
     boolean checkMove(Direction move)
@@ -158,5 +167,21 @@ public class Object {
             return true;
         }
         return false;
+    }
+    int left()
+    {
+        return leftMost.column;
+    }
+    int top()
+    {
+        return topMost.row;
+    }
+    int btm()
+    {
+        return btmMost.row;
+    }
+    int rht()
+    {
+        return rightMost.column;
     }
 }

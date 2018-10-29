@@ -11,6 +11,7 @@ public class Direction extends Position
    *               5 x 1
    *               4 3 2
    * */
+
   public Direction()
   {
     column = 0;

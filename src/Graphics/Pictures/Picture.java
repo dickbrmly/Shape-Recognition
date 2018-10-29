@@ -18,6 +18,9 @@ public class Picture
   {
     return picture;
   }
+  private Picture()  {  }
+
+
 }
 
 
