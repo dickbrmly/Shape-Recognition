@@ -1,33 +1,44 @@
 package Graphics;
 
-import Graphics.Pictures.Picture;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.PixelWriter;
+import javafx.scene.image.WritableImage;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.embed.swing.SwingFXUtils;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import static Graphics.Pictures.Picture.*;
+import static javafx.embed.swing.SwingFXUtils.toFXImage;
 
 public class Main extends Application
 {
   ImageView imgView;
-  Picture picture = Picture.getInstance();
+  Image viewedImage;
 
   @Override
-  public void init()
+  public void init() throws IOException
   {
-    picture.img = new Image("file:src/Graphics/Pictures/pic.gif");
-    picture.width = (int) picture.img.getWidth() - 1;
-    picture.height = (int) picture.img.getHeight() - 1;
-    picture.reader = picture.img.getPixelReader();
-    picture.colorCount = 0;
+    img = ImageIO.read( new File("src/Graphics/Pictures/pic.gif"));
+    width = img.getWidth() - 1;
+    height = img.getHeight() - 1;
+    WritableImage interim = new WritableImage(width,height);
+    PixelWriter write = interim.getPixelWriter();
+    viewedImage = toFXImage(img,interim);
+    colorCount = 0;
   }
 
   @Override
   public void start(Stage primaryStage)
   {
-    imgView = new ImageView(picture.img);
+    imgView = new ImageView(viewedImage);
     primaryStage.setTitle("Load Image");
     primaryStage.setResizable(true);
     StackPane sp = new StackPane();

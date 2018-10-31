@@ -1,29 +1,28 @@
 package Graphics;
 
-import Graphics.Pictures.Picture;
 import Graphics.position.Palete;
 import Graphics.position.Position;
-import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.image.*;
 import javafx.scene.image.Image;
-import javafx.scene.image.PixelReader;
-import javafx.scene.image.WritablePixelFormat;
-
-import java.awt.*;
 import java.awt.image.BufferedImage;
-import javafx.scene.paint.Color;
-import javax.imageio.ImageIO;
+
+import static Graphics.Pictures.Picture.*;
+import static javafx.embed.swing.SwingFXUtils.toFXImage;
 
 public class Mother
 {   //mother finds and creates shape files from the picture file
   private static Mother mother = new Mother();
-  Picture picture = Picture.getInstance();
   Position position = new Position(0,0);
-  Palete table = new Palete(picture.reader.getColor(position.column,position.row));
+
+
+  WritableImage interim = new WritableImage(width,height);
+  Image viewedImage = toFXImage(img,interim);
+  Palete table = new Palete(viewedImage.getPixelReader()
+    .getArgb(position.column,position.row));
+
   ObjectFiler objectFiler = new ObjectFiler();
   PictureFiler pictureFiler = new PictureFiler("jpeg");
   BufferedImage objectPixels = null;
-
-  PixelReader subimage = picture.img.getPixelReader();
 
   final Palete first = table;
 
@@ -38,14 +37,14 @@ public class Mother
     boolean found = false;
     int count = 1;
 
-    for (position.row = 0; position.row < picture.height; position.row++)
+    for (position.row = 0; position.row < height; position.row++)
     {
-      for (position.column = 0; position.column < picture.width; position.column++)
+      for (position.column = 0; position.column < width; position.column++)
       {
         table = first;
-        for (int j = 0; j <= picture.colorCount; j++)
+        for (int j = 0; j <= colorCount; j++)
         {
-          if (picture.reader.getColor(position.column, position.row).equals(table.getColor()))
+          if (img.getRGB(position.column, position.row) == (table.getColor()))
           {
             table.setCount(table.getCount() + 1);
             found = true;
@@ -54,8 +53,8 @@ public class Mother
         }
         if (!found)
         {
-          picture.colorCount = picture.colorCount + 1;
-          Palete newColor = new Palete(picture.reader.getColor(position.column, position.row));
+          colorCount = colorCount + 1;
+          Palete newColor = new Palete(img.getRGB(position.column, position.row));
           table.setNextLink(newColor);
           table = newColor;
         }
@@ -63,9 +62,9 @@ public class Mother
       }
     }
     table = first;
-    for (int j = 0; j < picture.colorCount; j++)
+    for (int j = 0; j < colorCount; j++)
     {
-      table.setRatio((double) (picture.height * picture.width));
+      table.setRatio((double) area());
       table = table.getNextLink();
     }
     /*
@@ -77,16 +76,15 @@ public class Mother
     Palete lastColor = new Palete();
     Object current = new Object(lastColor, position);
 
-    for (position.row = 0; position.row < picture.height; position.row++)
+    for (position.row = 0; position.row < height; position.row++)
     {
-      for (position.column = 0; position.column < picture.width; position.column++)
-        if (!picture.reader.getColor(position.column, position.row).equals(lastColor.getColor())) {
-          lastColor.setColor(picture.reader.getColor(position.column, position.row));
+      for (position.column = 0; position.column < width; position.column++)
+        if (img.getRGB(position.column, position.row) != lastColor.getColor()) {
+          lastColor.setColor(img.getRGB(position.column, position.row));
           Object object = new Object(lastColor, position);
           objectFiler.file(object, count);
-          BufferedImage objectPixels = SwingFXUtils.fromFXImage(picture.img,null);
-          objectPixels = objectPixels.getSubimage(object.left(),object.top(),
-                  object.rht() - object.left(),object.btm() - object.top());
+          objectPixels = img.getSubimage(object.x(),object.y(),
+            object.width(),object.height());
           pictureFiler.file(objectPixels, count);
           count++;
         }

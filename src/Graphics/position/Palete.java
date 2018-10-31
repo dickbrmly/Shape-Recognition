@@ -1,10 +1,15 @@
 package Graphics.position;
 
-import javafx.scene.paint.Color;
+
+import org.w3c.dom.css.RGBColor;
+
+import java.awt.*;
+
+import static javafx.scene.input.KeyCode.F;
 
 public class Palete
 {
-  private  Color color;
+  private int color;
   private int count;
   private double ratio; //ratio of this color within the image
 
@@ -12,10 +17,10 @@ public class Palete
 
   public Palete()
   {
-    color = Color.WHITE;
+    color = 0xFFFFFFFF;
     count = 0;
   }
-  public Palete (Color color)
+  public Palete (int color)
   {
     this.color = color;
     this.count = 0;
@@ -26,8 +31,8 @@ public class Palete
   }
   public Palete getPalete() {return this; }
 
-  public void setColor(Color hue) { color = hue; }
-  public Color getColor() { return color;}
+  public void setColor(int hue) { color = hue; }
+  public int getColor() { return color;}
   public void setCount(int number) { count = number;}
   public int getCount() { return count; }
   public void setRatio(double total) { ratio = count/total; } //pass the total number of pixels.

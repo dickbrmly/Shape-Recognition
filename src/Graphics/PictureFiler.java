@@ -23,7 +23,7 @@ public class PictureFiler {
         public void file(BufferedImage item, int index) {
 
             try {
-                file = new File("Image " + index + "."+ type);
+                file = new File("images/Image " + index + "."+ type);
                 if(!file.exists()) file.createNewFile();
                 ImageIO.write(item, "jpg", file);
             } catch (IOException e) {

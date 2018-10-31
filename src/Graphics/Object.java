@@ -1,28 +1,25 @@
 package Graphics;
 
-import Graphics.Pictures.Picture;
+import static Graphics.Pictures.Picture.*;
 import Graphics.position.Direction;
 import Graphics.position.Palete;
 import Graphics.position.Position;
-
 import java.util.Stack;
 
 public class Object implements java.io.Serializable {
 
-    Direction leftMost;
-    Direction rightMost;
-    Direction topMost;
-    Direction btmMost;
-    Direction temp;
+    private Direction leftMost;
+    private Direction rightMost;
+    private Direction topMost;
+    private Direction btmMost;
+    private Direction temp;
 
-    Picture picture = Picture.getInstance();
+    private boolean incompleteScan = true;
+    private double distribution;
+    private Direction move = new Direction();
+    private Palete color;
 
-    boolean incompleteScan = true;
-    double distribution;
-    Direction move = new Direction();
-    Palete color;
-
-    Stack<Position> edge = new Stack<Position>();
+    Stack<Position> edge = new Stack<>();
 
     int surfaces;  //how many surfaces on the object?  Consider a line has one, a square has four etc...
 
@@ -62,13 +59,14 @@ public class Object implements java.io.Serializable {
         btmMost = new Direction(move);
         temp = new Direction();
 
+
         edge.push(new Direction(move)); //store starting pixel
         if(move.zeros()) {
-            if (picture.reader.getColor(move.column + 1, move.row).equals(color.getColor())){
+            if (img.getRGB(move.column + 1, move.row) == color.getColor()){
                 move.column++;
                 edge.push(new Direction(move));
             }
-            else if (picture.reader.getColor(move.column + 1, move.row + 1).equals(color.getColor())) {
+            else if (img.getRGB(move.column + 1, move.row + 1) == (color.getColor())) {
                 move.column++;
                 move.row++;
                 edge.push(new Direction(move));
@@ -83,8 +81,7 @@ public class Object implements java.io.Serializable {
         // We assume the previous position was back one column unless this is a left-most position.
         // We are looking for a surface pixel in a clockwise pattern.
 //***********************************************************************************************************
-        while (incompleteScan)
-        { // There are one of seven possible moves
+        while (incompleteScan) { // There are one of seven possible moves
             temp.makeEqual(move);
 
             switch (move.quad) {
@@ -154,34 +151,33 @@ public class Object implements java.io.Serializable {
             if (move.equal(beginning)) incompleteScan = false;
 //***********************************************************************************************************
         }
-        distribution = (double)(btmMost.row - topMost.row) * (rightMost.column - leftMost.column) /
-                picture.width / picture.height;
+        distribution = (double)(btmMost.row - topMost.row) *
+                (rightMost.column - leftMost.column) /
+                (area());
     }
 
-    boolean checkMove(Direction move)
-    {
-        if (move.overEdge(picture.width, picture.height)) return false;
-        if (picture.reader.getColor(move.column, move.row).equals(color.getColor()))
-        {
+    boolean checkMove(Direction move) {
+        if (move.overEdge(width, height)) return false;
+        if (img.getRGB(move.column, move.row) == (color.getColor())) {
             edge.push(new Direction(move));
+            img.setRGB(move.column,move.row, 0xFFFFFFFF);
             return true;
         }
         return false;
     }
-    int left()
-    {
+    int x() {
         return leftMost.column;
     }
-    int top()
-    {
+    int y() {
         return topMost.row;
     }
-    int btm()
-    {
-        return btmMost.row;
+    int width() {
+        return rightMost.column - leftMost.column;
     }
-    int rht()
-    {
-        return rightMost.column;
+    int height() {
+        return btmMost.row - topMost.row;
+    }
+    double getDistribution() {
+        return distribution;
     }
 }

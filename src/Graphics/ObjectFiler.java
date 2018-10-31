@@ -11,7 +11,7 @@ public class ObjectFiler {
     public void file(Object item,int index) {
 
         try {
-            file = new File("object " + index + ".data");
+            file = new File("objects/object " + index + ".data");
             record = new FileOutputStream(file);
             if(!file.exists()) file.createNewFile();
             itemObject = new ObjectOutputStream(record);
