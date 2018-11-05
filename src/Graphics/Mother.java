@@ -1,30 +1,26 @@
 package Graphics;
 
-import Graphics.position.Palete;
+import Graphics.Pictures.Picture;
+import Graphics.position.ColorLink;
 import Graphics.position.Position;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.*;
-import javafx.scene.image.Image;
 import java.awt.image.BufferedImage;
-
-import static Graphics.Pictures.Picture.*;
-import static javafx.embed.swing.SwingFXUtils.toFXImage;
 
 public class Mother
 {   //mother finds and creates shape files from the picture file
-  private static Mother mother = new Mother();
   Position position = new Position(0,0);
+  Picture picture = Picture.getInstance();
+  PixelReader pixelReader = picture.getPixelReader();
 
 
-  WritableImage interim = new WritableImage(width,height);
-  Image viewedImage = toFXImage(img,interim);
-  Palete table = new Palete(viewedImage.getPixelReader()
-    .getArgb(position.column,position.row));
+  ColorLink table = new ColorLink(picture.getPixelReader().getColor(position.getColumn(),position.getRow()));
 
   ObjectFiler objectFiler = new ObjectFiler();
   PictureFiler pictureFiler = new PictureFiler("jpeg");
-  BufferedImage objectPixels = null;
+  BufferedImage original = SwingFXUtils.fromFXImage(picture.getImage(),null);
 
-  final Palete first = table;
+  final ColorLink first = table;
 
   /*
   *  Mother determines the color table which is a linked list of colors that are in the image with statistics
@@ -32,19 +28,20 @@ public class Mother
   *  for and back ground chatter.
   *
   * */
-  private Mother()
+  public Mother()
   {/* find all colors within a picture and determine ratios */
     boolean found = false;
     int count = 1;
 
-    for (position.row = 0; position.row < height; position.row++)
+    for (position.setRow(0); position.getRow() < picture.getHeight(); position.setRow(position.getRow() + 1))
     {
-      for (position.column = 0; position.column < width; position.column++)
+      for (position.setColumn(0); position.getColumn() < picture.getWidth();
+           position.setColumn(position.getColumn() + 1))
       {
         table = first;
-        for (int j = 0; j <= colorCount; j++)
+        for (int j = 0; j <= picture.getColorCount(); j++)
         {
-          if (img.getRGB(position.column, position.row) == (table.getColor()))
+          if (pixelReader.getColor(position.getColumn(), position.getRow()) == (table.getColor()))
           {
             table.setCount(table.getCount() + 1);
             found = true;
@@ -53,8 +50,8 @@ public class Mother
         }
         if (!found)
         {
-          colorCount = colorCount + 1;
-          Palete newColor = new Palete(img.getRGB(position.column, position.row));
+          picture.setColorCount(picture.getColorCount() + 1);
+          ColorLink newColor = new ColorLink(pixelReader.getColor(position.getColumn(), position.getRow()));
           table.setNextLink(newColor);
           table = newColor;
         }
@@ -62,34 +59,31 @@ public class Mother
       }
     }
     table = first;
-    for (int j = 0; j < colorCount; j++)
+    for (int j = 0; j < picture.getColorCount(); j++)
     {
-      table.setRatio((double) area());
+      table.setRatio((double) picture.getArea());
       table = table.getNextLink();
     }
     /*
     *     find all the shapes within a picture
     *
     * */
-    position.column = 0;
-    position.row = 0;
-    Palete lastColor = new Palete();
+    position.setColumn(0);
+    position.setRow(0);
+    ColorLink lastColor = new ColorLink();
     Object current = new Object(lastColor, position);
 
-    for (position.row = 0; position.row < height; position.row++)
+    for (position.setRow(0); position.getRow() < picture.getHeight(); position.setRow(position.getRow() + 1))
     {
-      for (position.column = 0; position.column < width; position.column++)
-        if (img.getRGB(position.column, position.row) != lastColor.getColor()) {
-          lastColor.setColor(img.getRGB(position.column, position.row));
+      for (position.setColumn(0); position.getColumn() < picture.getWidth(); position.setColumn(position.getColumn() + 1))
+        if (pixelReader.getColor(position.getColumn(), position.getRow()) != lastColor.getColor()) {
+          lastColor.setColor(pixelReader.getColor(position.getColumn(), position.getRow()));
           Object object = new Object(lastColor, position);
           objectFiler.file(object, count);
-          objectPixels = img.getSubimage(object.x(),object.y(),
+          BufferedImage bufferedImage = original.getSubimage(object.x(),object.y(),
             object.width(),object.height());
-          pictureFiler.file(objectPixels, count);
-          count++;
+          pictureFiler.file(bufferedImage, count);
         }
     }
   }
-
-  public static Mother getInstance() { return mother; }
 }

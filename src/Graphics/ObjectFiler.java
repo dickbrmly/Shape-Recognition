@@ -23,14 +23,6 @@ public class ObjectFiler {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        finally {
-            try{
-                if(record != null) record.close();
-            }
-            catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
     @Override

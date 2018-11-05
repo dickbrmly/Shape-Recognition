@@ -1,9 +1,14 @@
 package Graphics;
 
-import static Graphics.Pictures.Picture.*;
+import Graphics.Pictures.Picture;
 import Graphics.position.Direction;
-import Graphics.position.Palete;
+import Graphics.position.ColorLink;
 import Graphics.position.Position;
+import javafx.scene.image.PixelReader;
+import javafx.scene.image.PixelWriter;
+import javafx.scene.paint.Color;
+
+import java.io.IOException;
 import java.util.Stack;
 
 public class Object implements java.io.Serializable {
@@ -14,11 +19,15 @@ public class Object implements java.io.Serializable {
     private Direction btmMost;
     private Direction temp;
 
+    Picture picture = Picture.getInstance("src/Graphics/Pictures/pic.gif");
+    PixelReader pixelReader = picture.getPixelReader();
+    PixelWriter pixelWriter = picture.getPixelWriter();
+
     private boolean incompleteScan = true;
     private double distribution;
     private Direction move = new Direction();
-    private Palete color;
-
+    private ColorLink color;
+    private int MASK  = 0xFF0F0F0F;
     Stack<Position> edge = new Stack<>();
 
     int surfaces;  //how many surfaces on the object?  Consider a line has one, a square has four etc...
@@ -42,7 +51,9 @@ public class Object implements java.io.Serializable {
         else return y;
     }
 
-    public Object(Palete color, Position position) {
+    public Object(ColorLink color, Position position)
+    {
+
 
         this.color = color;
         move.quad = 1;
@@ -62,11 +73,11 @@ public class Object implements java.io.Serializable {
 
         edge.push(new Direction(move)); //store starting pixel
         if(move.zeros()) {
-            if (img.getRGB(move.column + 1, move.row) == color.getColor()){
+            if (pixelReader.getColor(move.column + 1, move.row).equals(color.getColor())){
                 move.column++;
                 edge.push(new Direction(move));
             }
-            else if (img.getRGB(move.column + 1, move.row + 1) == (color.getColor())) {
+            else if (pixelReader.getColor(move.column + 1, move.row + 1).equals(color.getColor())) {
                 move.column++;
                 move.row++;
                 edge.push(new Direction(move));
@@ -153,14 +164,14 @@ public class Object implements java.io.Serializable {
         }
         distribution = (double)(btmMost.row - topMost.row) *
                 (rightMost.column - leftMost.column) /
-                (area());
+                (picture.getArea());
     }
 
     boolean checkMove(Direction move) {
-        if (move.overEdge(width, height)) return false;
-        if (img.getRGB(move.column, move.row) == (color.getColor())) {
+        if (move.overEdge(picture.getwidth(),picture.getHeight())) return false;
+        if (pixelReader.getColor(move.column, move.row).equals(color.getColor())) {
             edge.push(new Direction(move));
-            img.setRGB(move.column,move.row, 0xFFFFFFFF);
+            pixelWriter.setColor(move.column,move.row, Color.WHITE);
             return true;
         }
         return false;

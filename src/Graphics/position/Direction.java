@@ -1,6 +1,6 @@
 package Graphics.position;
 
-public class Direction extends Position
+public class Direction extends Position implements java.io.Serializable
 {
   public int quad; //There are four quadrants in a circle and eight half quadrants.  It so
   // happens that there are eight pixel positions from a pixel position as well. The angular
