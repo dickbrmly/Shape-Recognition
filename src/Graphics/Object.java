@@ -1,194 +1,166 @@
 package Graphics;
 
-import Graphics.Pictures.Picture;
-import Graphics.position.Direction;
-import Graphics.position.ColorLink;
 import Graphics.position.Position;
-import javafx.scene.image.PixelReader;
-import javafx.scene.image.PixelWriter;
+import Graphics.Pictures.Picture;
 import javafx.scene.paint.Color;
 
-import java.io.IOException;
 import java.util.Stack;
 
 public class Object implements java.io.Serializable {
 
-    private Direction leftMost;
-    private Direction rightMost;
-    private Direction topMost;
-    private Direction btmMost;
-    private Direction temp;
+  private Position leftMost;
+  private Position rightMost;
+  private Position topMost;
+  private Position btmMost;
+  private Position temp;
 
-    Picture picture = Picture.getInstance("src/Graphics/Pictures/pic.gif");
-    PixelReader pixelReader = picture.getPixelReader();
-    PixelWriter pixelWriter = picture.getPixelWriter();
+  // happens that there are eight pixel positions from a pixel position as well. The angular
+  // change from a pixel position is therefore in pi/4 radian increments.
+  /*
+   *       Example single pixel move.
+   *               6 7 8
+   *               5 x 1
+   *               4 3 2
+   * */
 
-    private boolean incompleteScan = true;
-    private double distribution;
-    private Direction move = new Direction();
-    private ColorLink color;
-    private int MASK  = 0xFF0F0F0F;
-    Stack<Position> edge = new Stack<>();
+  Picture picture = Picture.getInstance("src/Graphics/Pictures/pic.gif");
 
-    int surfaces;  //how many surfaces on the object?  Consider a line has one, a square has four etc...
+  private boolean incompleteScan = true;
+  private double distribution;
+  private Color color = new Color(1, 1, 1, 1);
+  private Color MASK = new Color(0, 0, 0, 0);
+  Stack<Position> edge = new Stack<>();
 
-    Object nextObject;
+  int surfaces;  //how many surfaces on the object?  Consider a line has one, a square has four etc...
 
-    /* The surface has an 'object' color pixel but so does the filled portion of the object.
-     *  --> Therefore a surface pixel must be defined as a 'object' color pixel adjacent to
-     *  a 'non-object pixel. It's only a surface pixel if and only if it is next to an out of
-     *  color pixel.
-     *
-     *  */
+  Object nextObject;
 
-    private int ceiling(int x, int y) {
-        if (x > y) return x;
-        else return y;
+  /* The surface has an 'object' color pixel but so does the filled portion of the object.
+   *  --> Therefore a surface pixel must be defined as a 'object' color pixel adjacent to
+   *  a 'non-object pixel. It's only a surface pixel if and only if it is next to an out of
+   *  color pixel.
+   *
+   *  */
+
+  public Object(Color color, Position position) {
+    Position beginning = new Position(position);
+    Position move = new Position(position);
+    this.color = color;
+
+    move.quad = 1;
+
+    /* The rectangle made here would copy our object from the picture
+     * */
+
+    picture.setPixel(move, MASK); //write over first discovered pixel.
+
+    leftMost = new Position(move);
+    rightMost = new Position(move);
+    topMost = new Position(move);
+    btmMost = new Position(move);
+    temp = new Position();
+    // We assume the previous position was back one column unless this is a left-most position.
+    // We are looking for a surface pixel in a clockwise pattern.
+    //***********************************************************************************************************
+    while (incompleteScan) { // There are one of seven possible moves
+      temp.makeEqual(move);
+
+      switch (move.quad) {
+        case 1:
+          move.column = move.column - 1;
+          move.row = move.row - 1;
+          move.quad = 6;
+          break;
+        case 2:
+          move.row = move.row - 1;
+          move.quad = 7;
+          break;
+        case 3:
+          move.column = move.column + 1;
+          move.row = move.row - 1;
+          move.quad = 8;
+          break;
+        case 4:
+          move.column = move.column + 1;
+          move.quad = 1;
+          break;
+        case 5:
+          move.column = move.column + 1;
+          move.row = move.row + 1;
+          move.quad = 2;
+          break;
+        case 6:
+          move.row = move.row + 1;
+          move.quad = 3;
+          break;
+        case 7:
+          move.column = move.column - 1;
+          move.row = move.row + 1;
+          move.quad = 4;
+          break;
+        default:
+          move.column = move.column - 1;
+          move.quad = 5;
+          break;
+      }
+      if (!checkMove(move)) {
+        move.makeEqual(temp);
+        if (++move.quad > 8) move.quad = 1;
+      }
+      //***********************************************************************************************************
+      // Is it the one of the outer four walls?
+      if (move.column < leftMost.column) {
+        leftMost.column = move.column;
+        leftMost.row = move.row;
+      }
+      if (move.column > rightMost.column) {
+        rightMost.column = move.column;
+        rightMost.row = move.row;
+      }
+      if (move.row < topMost.row) {
+        topMost.column = move.column;
+        topMost.row = move.row;
+      }
+      if (move.row > btmMost.row) {
+        btmMost.column = move.column;
+        btmMost.row = move.row;
+      }
+      if (move.equal(beginning) && picture.getPixel(move).equals(MASK)) incompleteScan = false;
+      //***********************************************************************************************************
     }
+    distribution = (double) area() / picture.getArea();
+  }
 
-    private int floor(int x, int y) {
-        if (x < y) return x;
-        else return y;
+  boolean checkMove(Position move) {
+    if (move.overEdge(picture.getWidth() - 1, picture.getHeight() - 1)) return false;
+    if (picture.getPixel(move).equals(color)) {
+      edge.push(new Position(move));
+      picture.setPixel(move, MASK);
+      return true;
     }
+    return false;
+  }
 
-    public Object(ColorLink color, Position position)
-    {
+  int x() {
+    return leftMost.column;
+  }
 
+  int y() {
+    return topMost.row;
+  }
 
-        this.color = color;
-        move.quad = 1;
-        move.column = position.column;
-        move.row = position.row;
+  int width() {
+    return rightMost.column - leftMost.column;
+  }
 
-        Direction beginning = new Direction(move);
+  int height() {
+    return btmMost.row - topMost.row;
+  }
 
-        /* The rectangle made here would copy our object from the picture
-         * */
-        leftMost = new Direction(move);
-        rightMost = new Direction(move);
-        topMost = new Direction(move);
-        btmMost = new Direction(move);
-        temp = new Direction();
+  int area() {return width() * height();}
 
+  double getDistribution() {
+    return distribution;
+  }
 
-        edge.push(new Direction(move)); //store starting pixel
-        if(move.zeros()) {
-            if (pixelReader.getColor(move.column + 1, move.row).equals(color.getColor())){
-                move.column++;
-                edge.push(new Direction(move));
-            }
-            else if (pixelReader.getColor(move.column + 1, move.row + 1).equals(color.getColor())) {
-                move.column++;
-                move.row++;
-                edge.push(new Direction(move));
-            }
-            else {
-                move.row++;
-                edge.push(new Direction(move));
-            }
-        }
-        int pointer = 0;
-
-        // We assume the previous position was back one column unless this is a left-most position.
-        // We are looking for a surface pixel in a clockwise pattern.
-//***********************************************************************************************************
-        while (incompleteScan) { // There are one of seven possible moves
-            temp.makeEqual(move);
-
-            switch (move.quad) {
-                case 1:
-                    move.column = move.column - 1;
-                    move.row = move.row - 1;
-                    move.quad = 6;
-                    break;
-                case 2:
-                    move.row = move.row - 1;
-                    move.quad = 7;
-                    break;
-                case 3:
-                    move.column = move.column + 1;
-                    move.row = move.row - 1;
-                    move.quad = 8;
-                    break;
-                case 4:
-                    move.column = move.column + 1;
-                    move.quad = 1;
-                   break;
-                case 5:
-                    move.column = move.column + 1;
-                    move.row = move.row + 1;
-                    move.quad = 2;
-                    break;
-                case 6:
-                    move.row = move.row + 1;
-                    move.quad = 3;
-                    break;
-                case 7:
-                    move.column = move.column - 1;
-                    move.row = move.row + 1;
-                    move.quad = 4;
-                    break;
-                default:
-                    move.column = move.column - 1;
-                    move.quad = 5;
-                    break;
-            }
-            if (!checkMove(move)) {
-                move.makeEqual(temp);
-                if(++move.quad > 8) move.quad = 1;
-                }
-//***********************************************************************************************************
-// Is it the one of the outer four walls?
-            if (move.column < leftMost.column) {
-                leftMost.column = move.column;
-                leftMost.row = move.row;
-                leftMost.quad = move.quad;
-            }
-            if (move.column > rightMost.column) {
-                rightMost.column = move.column;
-                rightMost.row = move.row;
-                rightMost.quad = move.quad;
-            }
-            if (move.row < topMost.row) {
-                topMost.column = move.column;
-                topMost.row = move.row;
-                topMost.quad = move.quad;
-            }
-            if (move.row > btmMost.row) {
-                btmMost.column = move.column;
-                btmMost.row = move.row;
-                btmMost.quad = move.quad;
-            }
-            if (move.equal(beginning)) incompleteScan = false;
-//***********************************************************************************************************
-        }
-        distribution = (double)(btmMost.row - topMost.row) *
-                (rightMost.column - leftMost.column) /
-                (picture.getArea());
-    }
-
-    boolean checkMove(Direction move) {
-        if (move.overEdge(picture.getwidth(),picture.getHeight())) return false;
-        if (pixelReader.getColor(move.column, move.row).equals(color.getColor())) {
-            edge.push(new Direction(move));
-            pixelWriter.setColor(move.column,move.row, Color.WHITE);
-            return true;
-        }
-        return false;
-    }
-    int x() {
-        return leftMost.column;
-    }
-    int y() {
-        return topMost.row;
-    }
-    int width() {
-        return rightMost.column - leftMost.column;
-    }
-    int height() {
-        return btmMost.row - topMost.row;
-    }
-    double getDistribution() {
-        return distribution;
-    }
 }

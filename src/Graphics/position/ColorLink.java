@@ -5,8 +5,8 @@ import javafx.scene.paint.Color;
 
 public class ColorLink implements java.io.Serializable
 {
-  private Color color;
-  private int count;
+  private Color color; //A discovered color in the image
+  private int count;  //number of pixels that exist in this color
   private double ratio; //ratio of this color within the image
 
   ColorLink nextLink;
@@ -19,7 +19,7 @@ public class ColorLink implements java.io.Serializable
   public ColorLink (Color color)
   {
     this.color = color;
-    this.count = 0;
+    this.count = 1;  //if the object is created, it's for a color pixel.
   }
   public ColorLink(ColorLink color) {
     this.color = color.color;
