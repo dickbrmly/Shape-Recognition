@@ -53,10 +53,20 @@ public class Position
     else return false;
   }
 
+
   public void setPosition(Position there)
   {
     column = there.column;
     row = there.row;
+    quad = there.quad;
+  }
+
+
+  public void setPosition(int x, int y, int direction)
+  {
+    column = x;
+    row = y;
+    quad = 1;
   }
 
   public void makeEqual(Position that)
@@ -68,7 +78,7 @@ public class Position
 
   public boolean overEdge(int width, int height)
   { //determine if the position is on an edge
-    if(this.column < 0 || this.row < 0 || this.column > width || this.row > height)
+    if(this.column < 0 || this.row < 0 || this.column > --width || this.row > --height)
       return true;
     else return false;
   }

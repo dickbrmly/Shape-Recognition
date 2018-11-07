@@ -52,8 +52,6 @@ public class Object implements java.io.Serializable {
     /* The rectangle made here would copy our object from the picture
      * */
 
-    picture.setPixel(move, MASK); //write over first discovered pixel.
-
     leftMost = new Position(move);
     rightMost = new Position(move);
     topMost = new Position(move);
@@ -103,39 +101,38 @@ public class Object implements java.io.Serializable {
           move.quad = 5;
           break;
       }
-      if (!checkMove(move)) {
+      if (checkMove(move)) {
+        if (move.column < leftMost.column) {
+          leftMost.column = move.column;
+          leftMost.row = move.row;
+        }
+        if (move.column > rightMost.column) {
+          rightMost.column = move.column;
+          rightMost.row = move.row;
+        }
+        if (move.row < topMost.row) {
+          topMost.column = move.column;
+          topMost.row = move.row;
+        }
+        if (move.row > btmMost.row) {
+          btmMost.column = move.column;
+          btmMost.row = move.row;
+        }
+        if (move.equal(beginning)) incompleteScan = false;
+        picture.setPixel(move, MASK);
+      } else {
         move.makeEqual(temp);
         if (++move.quad > 8) move.quad = 1;
       }
-      //***********************************************************************************************************
-      // Is it the one of the outer four walls?
-      if (move.column < leftMost.column) {
-        leftMost.column = move.column;
-        leftMost.row = move.row;
-      }
-      if (move.column > rightMost.column) {
-        rightMost.column = move.column;
-        rightMost.row = move.row;
-      }
-      if (move.row < topMost.row) {
-        topMost.column = move.column;
-        topMost.row = move.row;
-      }
-      if (move.row > btmMost.row) {
-        btmMost.column = move.column;
-        btmMost.row = move.row;
-      }
-      if (move.equal(beginning) && picture.getPixel(move).equals(MASK)) incompleteScan = false;
-      //***********************************************************************************************************
+
     }
     distribution = (double) area() / picture.getArea();
   }
 
   boolean checkMove(Position move) {
-    if (move.overEdge(picture.getWidth() - 1, picture.getHeight() - 1)) return false;
+    if (move.overEdge(picture.getWidth(), picture.getHeight())) return false;
     if (picture.getPixel(move).equals(color)) {
       edge.push(new Position(move));
-      picture.setPixel(move, MASK);
       return true;
     }
     return false;
@@ -162,5 +159,4 @@ public class Object implements java.io.Serializable {
   double getDistribution() {
     return distribution;
   }
-
 }

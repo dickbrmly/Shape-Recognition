@@ -44,8 +44,6 @@ public class Picture
     // taaDaa
   }
 
-  public PixelReader getPixelReader() {return pixelReader;}
-  public PixelWriter getPixelWriter() {return pixelWriter;}
   public Color  getPixel(Position where)
   {
     return pixelReader.getColor(where.column,where.row);
@@ -66,6 +64,7 @@ public class Picture
       return false;
     }
   }
+
   public int getArea() { return width * height; }
   public void setColorCount(int colorCount) { this.colorCount = colorCount; }
   public int getColorCount() { return colorCount; }

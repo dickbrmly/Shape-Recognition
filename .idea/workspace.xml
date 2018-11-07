@@ -10,8 +10,6 @@
       <change beforePath="$PROJECT_DIR$/src/Graphics/Mother.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/Mother.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Graphics/Object.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/Object.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Graphics/Pictures/Picture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/Pictures/Picture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Graphics/position/ColorLink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/position/ColorLink.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Graphics/position/Direction.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Graphics/position/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/position/Position.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,10 +31,20 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/Graphics/Object.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="522">
-                    <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+                  <state relative-caret-position="1560">
+                    <caret line="129" selection-start-line="129" selection-end-line="129" />
                     <folding>
                       <element signature="imports" expanded="true" />
+                      <element signature="e#4290#4291#0" expanded="true" />
+                      <element signature="e#4322#4323#0" expanded="true" />
+                      <element signature="e#4335#4336#0" expanded="true" />
+                      <element signature="e#4363#4364#0" expanded="true" />
+                      <element signature="e#4380#4381#0" expanded="true" />
+                      <element signature="e#4431#4432#0" expanded="true" />
+                      <element signature="e#4449#4450#0" expanded="true" />
+                      <element signature="e#4491#4492#0" expanded="true" />
+                      <element signature="e#4564#4565#0" expanded="true" />
+                      <element signature="e#4593#4594#0" expanded="true" />
                     </folding>
                   </state>
                 </provider>
@@ -50,11 +58,37 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file pinned="false" current-in-tab="true">
+            <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/Graphics/position/Position.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="468">
-                    <caret line="65" column="26" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="26" />
+                  <state relative-caret-position="1152">
+                    <caret line="80" column="80" selection-start-line="80" selection-start-column="80" selection-end-line="80" selection-end-column="80" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/Graphics/PictureFiler.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="144">
+                    <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/Graphics/Pictures/Picture.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="522">
+                    <caret line="72" column="35" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                      <element signature="e#1481#1482#0" expanded="true" />
+                      <element signature="e#1542#1543#0" expanded="true" />
+                    </folding>
                   </state>
                 </provider>
               </entry>
@@ -115,28 +149,28 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="17869" />
-          <entry key="txt" value="461" />
+          <entry key="java" value="18161" />
+          <entry key="txt" value="508" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="17869" />
-          <entry key="PLAIN_TEXT" value="461" />
+          <entry key="JAVA" value="18161" />
+          <entry key="PLAIN_TEXT" value="508" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="3" />
           <entry key="gif" value="1" />
-          <entry key="java" value="101" />
+          <entry key="java" value="105" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="3" />
           <entry key="Image" value="1" />
-          <entry key="JAVA" value="101" />
+          <entry key="JAVA" value="105" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -171,22 +205,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Graphics/Pictures/Picture.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="776">
-              <caret line="54" column="35" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1481#1482#0" expanded="true" />
-                <element signature="e#1542#1543#0" expanded="true" />
-                <element signature="e#1587#1588#0" expanded="true" />
-                <element signature="e#1648#1649#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Graphics/position/ColorLink.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
@@ -198,8 +216,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Graphics/Mother.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1170">
-              <caret line="77" column="5" lean-forward="true" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+            <state relative-caret-position="1128">
+              <caret line="72" selection-start-line="72" selection-end-line="72" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -224,6 +242,7 @@
       <find>buffered</find>
       <find>position.column</find>
       <find>count</find>
+      <find>equal</find>
     </findStrings>
     <replaceStrings>
       <replace>position</replace>
@@ -253,10 +272,10 @@
         <option value="$PROJECT_DIR$/src/Graphics/Main.java" />
         <option value="$PROJECT_DIR$/src/Graphics/position/ColorLink.java" />
         <option value="$PROJECT_DIR$/src/Graphics/position/Direction.java" />
-        <option value="$PROJECT_DIR$/src/Graphics/position/Position.java" />
         <option value="$PROJECT_DIR$/src/Graphics/Pictures/Picture.java" />
-        <option value="$PROJECT_DIR$/src/Graphics/Mother.java" />
+        <option value="$PROJECT_DIR$/src/Graphics/position/Position.java" />
         <option value="$PROJECT_DIR$/src/Graphics/Object.java" />
+        <option value="$PROJECT_DIR$/src/Graphics/Mother.java" />
       </list>
     </option>
   </component>
@@ -436,7 +455,7 @@
     <property name="SearchEverywhereHistoryKey" value="*Column&#9;PSI&#9;JAVA://javafx.scene.control.TableColumn&#10;Position.column&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541589607008" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541633803145" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.ActionScript" />
@@ -557,11 +576,18 @@
       <option name="project" value="LOCAL" />
       <updated>1541409787364</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Refining the position object and color objects.">
+      <created>1541589654494</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1541589654494</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113583000" />
+    <option name="totallyTimeSpent" value="119570000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2168" y="-506" width="1096" height="1896" extended-state="6" />
@@ -645,7 +671,8 @@
     <MESSAGE value="Now circles the outer picture." />
     <MESSAGE value="Converted the image to a Buffered Image making it easier to edit and convert." />
     <MESSAGE value="Reconfigured picture object so its more useful in the future" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reconfigured picture object so its more useful in the future" />
+    <MESSAGE value="Refining the position object and color objects." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refining the position object and color objects." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -660,7 +687,7 @@
           <url>file://$PROJECT_DIR$/src/Graphics/Mother.java</url>
           <line>72</line>
           <properties />
-          <option name="timeStamp" value="62" />
+          <option name="timeStamp" value="77" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -668,7 +695,27 @@
   <component name="debuggerHistoryManager">
     <expressions id="setValue">
       <expression>
+        <expression-string>3</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>2</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>537</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>5</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>719</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -724,16 +771,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Graphics/PictureFiler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/com/sun/prism/Image.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
@@ -745,23 +782,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Graphics/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Graphics/position/Position.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="65" column="26" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -803,34 +823,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graphics/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graphics/PictureFiler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graphics/position/Position.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1152">
+          <caret line="80" column="80" selection-start-line="80" selection-start-column="80" selection-end-line="80" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Graphics/Pictures/Picture.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="776">
-          <caret line="54" column="35" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
+        <state relative-caret-position="522">
+          <caret line="72" column="35" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1481#1482#0" expanded="true" />
             <element signature="e#1542#1543#0" expanded="true" />
-            <element signature="e#1587#1588#0" expanded="true" />
-            <element signature="e#1648#1649#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Graphics/Object.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+        <state relative-caret-position="1560">
+          <caret line="129" selection-start-line="129" selection-end-line="129" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4290#4291#0" expanded="true" />
+            <element signature="e#4322#4323#0" expanded="true" />
+            <element signature="e#4335#4336#0" expanded="true" />
+            <element signature="e#4363#4364#0" expanded="true" />
+            <element signature="e#4380#4381#0" expanded="true" />
+            <element signature="e#4431#4432#0" expanded="true" />
+            <element signature="e#4449#4450#0" expanded="true" />
+            <element signature="e#4491#4492#0" expanded="true" />
+            <element signature="e#4564#4565#0" expanded="true" />
+            <element signature="e#4593#4594#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Graphics/Mother.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="77" column="5" lean-forward="true" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+        <state relative-caret-position="1128">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

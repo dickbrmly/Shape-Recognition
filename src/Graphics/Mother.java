@@ -3,8 +3,6 @@ package Graphics;
 import Graphics.Pictures.Picture;
 import Graphics.position.ColorLink;
 import Graphics.position.Position;
-import javafx.embed.swing.SwingFXUtils;
-import javafx.scene.image.*;
 import javafx.scene.paint.Color;
 
 import java.awt.image.BufferedImage;
@@ -12,12 +10,12 @@ import java.awt.image.BufferedImage;
 public class Mother {   //mother finds and creates shape files from the picture file
   Position position = new Position(0, 0);
   Picture picture = Picture.getInstance();
-
+  ObjectFiler objectFiler = new ObjectFiler();
+  PictureFiler pictureFiler = new PictureFiler("jpeg");
 
   ColorLink table = new ColorLink(picture.getPixel(position));
 
-  ObjectFiler objectFiler = new ObjectFiler();
-  PictureFiler pictureFiler = new PictureFiler("jpeg");
+
 
 
   final ColorLink first = table;
@@ -60,17 +58,16 @@ public class Mother {   //mother finds and creates shape files from the picture 
      *     find all the shapes within a picture
      *
      * */
-    position.column = 0;
-    position.row = 0;
-    Color lastColor = first.getColor();
-    Object current = new Object(picture.getPixel(0, 0), position);
+    position.setPosition(0,0,1);
+    Color lastColor = new Color(0, 0, 0, 0);
+   // Object current = new Object(picture.getPixel(0, 0), position);
 
     for (position.row = 0; position.row < picture.getHeight(); position.row++) {
       for (position.column = 0; position.column < picture.getWidth(); position.column++)
-        if (picture.getPixel(position).equals(lastColor)) {
+        if (!picture.getPixel(position).equals(lastColor)) {
           lastColor = picture.getPixel(position);
           Object object = new Object(lastColor, position);
-          objectFiler.file(object, table.getCount());
+//          objectFiler.file(object, table.getCount());
           BufferedImage bufferedImage = picture.getBufferedImage().
               getSubimage(object.x(), object.y(), object.width(), object.height());
           pictureFiler.file(bufferedImage, table.getCount());
