@@ -2,13 +2,13 @@ package Graphics;
 
 import java.io.*;
 
-public class ObjectFiler {
+public class ShapeFiler {
 
     FileOutputStream record = null;
     File file;
     ObjectOutputStream itemObject;
 
-    public void file(Object item,int index) {
+    public void file(Shape item,int index) {
 
         try {
             file = new File("objects/object " + index + ".data");

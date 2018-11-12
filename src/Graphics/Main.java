@@ -18,9 +18,8 @@ public class Main extends Application
   }
 
   @Override
-  public void start(Stage primaryStage)
-  {
-    Picture picture = Picture.getInstance("pic.gif");
+  public void start(Stage primaryStage) throws IOException {
+    Picture picture = Picture.getInstance("pic.bmp");
 
     ImageView imgView = new ImageView(picture.getImage());
     primaryStage.setTitle("Load Image");

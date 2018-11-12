@@ -1,43 +1,30 @@
 package Graphics;
 
-import javax.imageio.ImageIO;
+import javafx.scene.image.WritableImage;
+import javafx.embed.swing.SwingFXUtils;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileOutputStream;
+import java.awt.image.RenderedImage;
+import javax.imageio.ImageIO;
 import java.io.IOException;
+import java.io.File;
 
 public class PictureFiler {
 
-        String type;
+  String type;
+
+  PictureFiler(String type) {
+    this.type = type;
+  }
 
 
-    PictureFiler(String type){
-        this.type = type;
-    }
-        FileOutputStream record = null;
-        File file;
-
-        public void file(BufferedImage item, int index) {
-
-            try {
-                file = new File("images/Image " + index + "."+ type);
-                if(!file.exists()) file.createNewFile();
-                ImageIO.write(item, "jpg", file);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            finally {
-                try{
-                    if(record != null) record.close();
-                }
-                catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-        @Override
-        protected void finalize() throws Throwable {
-            super.finalize();
-        }
-    }
+  public void file(WritableImage image, int index)  {
+      File file = new File("images/image " + index + "." + type);
+      BufferedImage bImage = SwingFXUtils.fromFXImage(image, null);
+      try
+      {
+          file.createNewFile();
+          ImageIO.write((RenderedImage) bImage, type, file);
+      }
+        catch (IOException e) { System.out.println(e); }
+  }
+}
