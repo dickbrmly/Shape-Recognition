@@ -8,6 +8,7 @@ import javafx.scene.image.*;
 import Graphics.Shape;
 
 import java.io.File;
+import java.util.concurrent.TimeUnit;
 
 public class Picture
 {
@@ -16,7 +17,7 @@ public class Picture
   private int height = 0;
   private int colorCount = 0;
   private Position maximum;
-  private WritableImage image;
+  private final WritableImage image;
   PixelReader pixelReader;
   PixelWriter pixelWriter;
 
@@ -49,18 +50,19 @@ public class Picture
     // taaDaa
   }
 
-  public WritableImage getImage(Shape Shape)
+  public WritableImage getImage(Shape shape)
   {
-    WritableImage piece = new WritableImage(Shape.width(), Shape.height());
-    PixelWriter pixelWriter = piece.getPixelWriter();
-    byte[] buffer = new byte[Shape.width() * Shape.height() * 4];
-    pixelReader.getPixels(Shape.x(),Shape.y(),Shape.width(),Shape.height(),PixelFormat.getByteBgraInstance(),buffer,0,Shape.width() * 4);
-    pixelWriter.setPixels(0,0,Shape.width(),Shape.height(),PixelFormat.getByteBgraInstance(),buffer,0,Shape.width() * 4);
+    WritableImage piece = new WritableImage(shape.width(), shape.height());
+    PixelWriter pixelChunk = piece.getPixelWriter();
+    byte[] buffer = new byte[shape.width() * shape.height() * 4];
+    pixelReader.getPixels(shape.x(),shape.y(),shape.width(),shape.height(),PixelFormat.getByteBgraInstance(),buffer,0,shape.width() * 4);
+    pixelChunk.setPixels(0,0,shape.width(),shape.height(),PixelFormat.getByteBgraInstance(),buffer,0,shape.width() * 4);
     return piece;
   }
 
   public Color  getPixel(Position where)
   {
+    if(!checkMove(where)) return MASK;
     return pixelReader.getColor(where.column,where.row);
   }
   public Color  getPixel(int x, int y)
@@ -72,23 +74,23 @@ public class Picture
   public void setPixel(int x, int y, Color mask) { pixelWriter.setColor(x,y,mask); }
   public void setPixel(Position where, Color mask) { pixelWriter.setColor(where.column,where.row,mask); }
 
-  public void pixelDinner(Shape food) {
-    for (int y = food.y(); y < food.height(); y++)
-      for (int x = food.x(); x < food.width(); ++x)
-        if (this.getPixel(x,y).equals(food)) this.setPixel(x,y, Color.RED);
+  public void pixelDinner(Color background) {
+    for (int y = 0; y < height; y++)
+      for (int x = 0; x < width; ++x)
+        if (this.getPixel(x,y).equals(background)) pixelWriter.setColor(x,y, MASK);
   }
 
-  public void pixelEatter(Color food,Position position)
+  public void pixelEatter(Position item, Color food)
   {
-    for(int quad = 1; quad < 9; ++quad)
-    {
-      Position test = new Position(position);
-      test.changeQuad(quad);
-      if(checkMove(test) && this.getPixel(test).equals(food)) {
-        pixelEatter(food, test);
-      } else test.makeEqual(position);
-      this.setPixel(position,MASK);
-    }
+    this.setPixel(item,MASK);
+    item.changeQuad(7);
+      if (this.getPixel(item).equals(food)) pixelEatter(new Position(item), food);
+    item.changeQuad(2);
+      if (this.getPixel(item).equals(food)) pixelEatter(new Position(item), food);
+    item.changeQuad(4);
+      if (this.getPixel(item).equals(food)) pixelEatter(new Position(item), food);
+    item.changeQuad(6);
+      if (this.getPixel(item).equals(food)) pixelEatter(new Position(item), food);
   }
 
   public boolean checkMove(Position move) {
@@ -100,7 +102,7 @@ public class Picture
   public int getArea() { return width * height; }
   public void setColorCount(int colorCount) { this.colorCount = colorCount; }
   public int getColorCount() { return colorCount; }
-  public Image getImage() { return image; }
+  public WritableImage getImage() { return image; }
   public int getWidth() {return width;}
   public int getHeight() {return height;}
   //Singleton double instance method to accommodate file name passing

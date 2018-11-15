@@ -15,6 +15,7 @@ public class Shape implements java.io.Serializable {
   public int id;
   private Position minimum;
   private Position maximum;
+  private Position start;
 
   private Position temp;
 
@@ -28,7 +29,6 @@ public class Shape implements java.io.Serializable {
    * */
 
   Picture picture = Picture.getInstance();
-
 
   private boolean incompleteScan = true;
   private double distribution;
@@ -45,8 +45,9 @@ public class Shape implements java.io.Serializable {
    *
    *  */
 
-  public Shape(int id, Color color, Position position) {
+  public Shape(final int id, Color color, Position position) {
 
+    this.start = position;
     edge.add(new Position(position)); //save initial position
     Position beginning = new Position(position);
     Position move = new Position(position);
@@ -101,7 +102,6 @@ public class Shape implements java.io.Serializable {
 
         if (move.equal(beginning)) incompleteScan = false;
         edge.add(new Position(move));
-        //picture.setPixel(move, MASK);
       } else {
         move.makeEqual(temp);
         if (++move.quad > 8) move.quad = 1;
@@ -110,10 +110,16 @@ public class Shape implements java.io.Serializable {
     distribution = (double) area() / picture.getArea();
   }
 
+  public Color getColor()
+  {
+    return color;
+  }
+  public Position start() {
+    return start;
+  }
   public int x() {
     return minimum.column;
   }
-
   public int y() {
     return minimum.row;
   }

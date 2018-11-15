@@ -20,11 +20,7 @@ public class PictureFiler {
   public void file(WritableImage image, int index)  {
       File file = new File("images/image " + index + "." + type);
       BufferedImage bImage = SwingFXUtils.fromFXImage(image, null);
-      try
-      {
-          file.createNewFile();
-          ImageIO.write((RenderedImage) bImage, type, file);
-      }
+      try { ImageIO.write((RenderedImage) bImage, type, file); }
         catch (IOException e) { System.out.println(e); }
   }
 }

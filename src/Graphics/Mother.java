@@ -9,6 +9,7 @@ import javafx.scene.paint.Color;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import static Graphics.position.ColorLink.MASK;
@@ -21,7 +22,7 @@ public class Mother {   //mother finds and creates shape files from the picture 
   int counter = 0;
   List<ColorLink> table = new ArrayList<ColorLink>();
   BufferedImage bufferedImage;
-  Shape Shape;
+  List<Shape> shapes = new LinkedList<Shape>();
   Image image;
 ;
 
@@ -64,15 +65,19 @@ public class Mother {   //mother finds and creates shape files from the picture 
      * */
     position.setPosition(0,0,1);
     Color lastColor = new Color(0, 0, 0, 0);
+    picture.pixelDinner(Color.WHITE); //dinner on background color.
+    pictureFiler.file(picture.getImage(), ++counter);
 
     for (position.row = 0; position.row < picture.getHeight(); position.row++) {
-      for (position.column = 0; position.column < picture.getWidth(); position.column++)
-        if (!(picture.getPixel(position).equals(lastColor) || picture.getPixel(position).equals(MASK)) ) {
-          lastColor = picture.getPixel(position);
-          Shape = new Shape(counter, lastColor, position);
-          picture.pixelDinner(Shape);
-          pictureFiler.file(picture.getImage(Shape), ++counter);
+      for (position.column = 0; position.column < picture.getWidth(); position.column++) {
+        lastColor = picture.getPixel(position);
+        if (!lastColor.equals(MASK)) {
+          shapes.add(0, new Shape(counter, lastColor, position));
+          pictureFiler.file(picture.getImage(shapes.get(0)), ++counter);
+          picture.pixelEatter(new Position(position), lastColor);
+          pictureFiler.file(picture.getImage(), ++counter);
         }
+      }
     }
   }
 }
