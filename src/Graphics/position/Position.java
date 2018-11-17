@@ -17,6 +17,7 @@ public class Position implements java.io.Serializable {
   public int row;
   public int quad;
 
+
   public Position() { }
 
   public Position(int x, int y, int quad) {

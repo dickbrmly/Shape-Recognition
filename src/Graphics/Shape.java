@@ -33,7 +33,7 @@ public class Shape implements java.io.Serializable {
   private boolean incompleteScan = true;
   private double distribution;
   private Color color = new Color(1, 1, 1, 1);
-  private List<Position> edge = new ArrayList<Position>();
+  public List<Position> edge = new ArrayList<Position>();
   private int index = 0;
 
   private int surfaces;  //how many surfaces on the Shape?  Consider a line has one, a square has four etc...
@@ -123,6 +123,8 @@ public class Shape implements java.io.Serializable {
   public int y() {
     return minimum.row;
   }
+  public int maxRow() { return maximum.row; }
+  public List<Position> getEdge() { return edge; }
 
   public int width() {
     return maximum.column - minimum.column;

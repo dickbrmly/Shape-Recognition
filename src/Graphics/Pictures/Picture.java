@@ -2,12 +2,14 @@ package Graphics.Pictures;
 
 import static Graphics.position.ColorLink.MASK;
 import Graphics.position.Position;
+import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.image.*;
 import Graphics.Shape;
 
 import java.io.File;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Picture
@@ -55,8 +57,10 @@ public class Picture
     WritableImage piece = new WritableImage(shape.width(), shape.height());
     PixelWriter pixelChunk = piece.getPixelWriter();
     byte[] buffer = new byte[shape.width() * shape.height() * 4];
-    pixelReader.getPixels(shape.x(),shape.y(),shape.width(),shape.height(),PixelFormat.getByteBgraInstance(),buffer,0,shape.width() * 4);
-    pixelChunk.setPixels(0,0,shape.width(),shape.height(),PixelFormat.getByteBgraInstance(),buffer,0,shape.width() * 4);
+    pixelReader.getPixels(shape.x(),shape.y(),shape.width(),shape.height(),PixelFormat.getByteBgraInstance(),
+        buffer,0,shape.width() * 4);
+    pixelChunk.setPixels(0,0,shape.width(),shape.height(),PixelFormat.getByteBgraInstance(),buffer,
+        0,shape.width() * 4);
     return piece;
   }
 
@@ -80,17 +84,36 @@ public class Picture
         if (this.getPixel(x,y).equals(background)) pixelWriter.setColor(x,y, MASK);
   }
 
-  public void pixelEatter(Position item, Color food)
+  public void pixelEatter(final Shape item, Color food)
   {
-    this.setPixel(item,MASK);
-    item.changeQuad(7);
-      if (this.getPixel(item).equals(food)) pixelEatter(new Position(item), food);
-    item.changeQuad(2);
-      if (this.getPixel(item).equals(food)) pixelEatter(new Position(item), food);
-    item.changeQuad(4);
-      if (this.getPixel(item).equals(food)) pixelEatter(new Position(item), food);
-    item.changeQuad(6);
-      if (this.getPixel(item).equals(food)) pixelEatter(new Position(item), food);
+        List<Position> edge = item.getEdge();
+        Position left = new Position();
+
+    for (int x = item.y(); x <= item.maxRow(); ++x)
+    {
+      for (Position right : edge)
+      {
+        if (right.row == x && this.getPixel(right.column + 1, right.row) != food)
+        {
+          left.makeEqual(right);
+          while (this.getPixel(left.column - 1, left.row).equals(food)) --left.column;
+          eatALine(left.column, right.column, right.row);
+        }
+      }
+      for (Position lft : edge)
+      {
+        if (lft.row == x && this.getPixel(lft.column - 1, lft.row) != food)
+        {
+          left.makeEqual(lft);
+          while (this.getPixel(left.column + 1, left.row).equals(food)) ++left.column;
+          eatALine(lft.column, left.column, lft.row);
+        }
+      }
+    }
+  }
+
+    private void eatALine(int left,int right, int row) {
+    for (int x = left; x <= right; x++) pixelWriter.setColor(x,row,MASK);
   }
 
   public boolean checkMove(Position move) {

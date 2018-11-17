@@ -74,7 +74,7 @@ public class Mother {   //mother finds and creates shape files from the picture 
         if (!lastColor.equals(MASK)) {
           shapes.add(0, new Shape(counter, lastColor, position));
           pictureFiler.file(picture.getImage(shapes.get(0)), ++counter);
-          picture.pixelEatter(new Position(position), lastColor);
+          picture.pixelEatter(shapes.get(0), lastColor);
           pictureFiler.file(picture.getImage(), ++counter);
         }
       }
