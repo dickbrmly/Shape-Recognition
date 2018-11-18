@@ -96,7 +96,7 @@ public class Picture
         if (right.row == x && this.getPixel(right.column + 1, right.row) != food)
         {
           left.makeEqual(right);
-          while (this.getPixel(left.column - 1, left.row).equals(food)) --left.column;
+          while (!this.getPixel(left.column - 1, left.row).equals(MASK)) --left.column;
           eatALine(left.column, right.column, right.row);
         }
       }
@@ -105,7 +105,7 @@ public class Picture
         if (lft.row == x && this.getPixel(lft.column - 1, lft.row) != food)
         {
           left.makeEqual(lft);
-          while (this.getPixel(left.column + 1, left.row).equals(food)) ++left.column;
+          while (!this.getPixel(left.column + 1, left.row).equals(MASK)) ++left.column;
           eatALine(lft.column, left.column, lft.row);
         }
       }
