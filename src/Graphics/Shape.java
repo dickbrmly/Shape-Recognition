@@ -1,14 +1,10 @@
 package Graphics;
 
-
 import Graphics.position.Position;
 import Graphics.Pictures.Picture;
 import javafx.scene.paint.Color;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import static Graphics.position.ColorLink.MASK;
 
 public class Shape implements java.io.Serializable {
 
@@ -32,9 +28,8 @@ public class Shape implements java.io.Serializable {
 
   private boolean incompleteScan = true;
   private double distribution;
-  private Color color = new Color(1, 1, 1, 1);
+  private Color color;
   public List<Position> edge = new ArrayList<Position>();
-  private int index = 0;
 
   private int surfaces;  //how many surfaces on the Shape?  Consider a line has one, a square has four etc...
 

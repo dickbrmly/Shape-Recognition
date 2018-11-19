@@ -1,24 +1,23 @@
 package Graphics;
 
-import Graphics.Pictures.Picture;
 import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
+import javafx.scene.image.ImageView;
+import Graphics.Pictures.Picture;
 import javafx.stage.Stage;
-import java.io.IOException;
+import javafx.scene.Scene;
 
 public class Main extends Application
 {
 
   @Override
-  public void init() throws IOException
+  public void init()
   {
 
   }
 
   @Override
-  public void start(Stage primaryStage) throws IOException {
+  public void start(Stage primaryStage) {
     Picture picture = Picture.getInstance("pic.bmp");
 
     ImageView imgView = new ImageView(picture.getImage());

@@ -2,7 +2,6 @@ package Graphics.Pictures;
 
 import static Graphics.position.ColorLink.MASK;
 import Graphics.position.Position;
-import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.image.*;
@@ -10,7 +9,6 @@ import Graphics.Shape;
 
 import java.io.File;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class Picture
 {
@@ -26,8 +24,6 @@ public class Picture
   private Picture(String imageFile)
   {
     Image interim;
-
-
 
     File file = new File(imageFile);
     interim = new Image(file.toURI().toString());

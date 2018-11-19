@@ -2,7 +2,6 @@ package Graphics.position;
 
 
 import javafx.scene.paint.Color;
-import sun.plugin2.util.ColorUtil;
 
 public class ColorLink implements java.io.Serializable
 {
@@ -26,6 +25,12 @@ public class ColorLink implements java.io.Serializable
     this.count = color.getCount();
   }
 
+  public void makeEqual(ColorLink that)
+  {
+    this.color = that.color;
+    this.count = that.count;
+    this.ratio = that.ratio;
+  }
   public Color getColor() { return color;}
   public void setCount(int number) { count = number;}
   public int getCount() { return count; }
