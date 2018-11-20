@@ -80,10 +80,13 @@ public class Picture
         if (this.getPixel(x,y).equals(background)) pixelWriter.setColor(x,y, MASK);
   }
 
-  public void pixelEatter(final Shape item, Color food)
+  public WritableImage pixelEatter(final Shape item, Color food)
   {
-        List<Position> edge = item.getEdge();
-        Position left = new Position();
+    WritableImage piece = new WritableImage(item.width() + 1, item.height() + 1);
+    PixelWriter pixelChunk = piece.getPixelWriter();
+    List<Position> edge = item.getEdge();
+    Position left = new Position();
+
 
     for (int x = item.y(); x <= item.maxRow(); ++x)
     {
@@ -94,6 +97,8 @@ public class Picture
           left.makeEqual(right);
           while (!this.getPixel(left.column - 1, left.row).equals(MASK)) --left.column;
           eatALine(left.column, right.column, right.row);
+          for (int y = left.column; y <= right.column; y++)
+            pixelChunk.setColor(y - item.x(),right.row - item.y(),Color.BLACK);
         }
       }
       for (Position lft : edge)
@@ -103,9 +108,12 @@ public class Picture
           left.makeEqual(lft);
           while (!this.getPixel(left.column + 1, left.row).equals(MASK)) ++left.column;
           eatALine(lft.column, left.column, lft.row);
+          for (int y = lft.column; y <= left.column; y++)
+            pixelChunk.setColor(y - item.x(),left.row - item.y(),Color.BLACK);
         }
       }
     }
+    return piece;
   }
 
     private void eatALine(int left,int right, int row) {
