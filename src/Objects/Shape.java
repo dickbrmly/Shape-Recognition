@@ -1,11 +1,13 @@
-package Graphics;
+package Objects;
 
-import Graphics.position.Position;
-import Graphics.Pictures.Picture;
+import position.Position;
+import Controls.Picture;
 import javafx.scene.paint.Color;
 import java.util.ArrayList;
 import java.util.List;
-
+/*
+  Shape discovers itself after being gjven a single pixel location of itself.  Every shape has a shape object.
+ */
 public class Shape implements java.io.Serializable {
 
   public int id;

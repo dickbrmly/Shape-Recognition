@@ -1,4 +1,4 @@
-package Graphics.position;
+package position;
 
 
 import javafx.scene.paint.Color;

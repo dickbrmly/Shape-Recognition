@@ -1,11 +1,13 @@
-package Graphics;
 
 import javafx.application.Application;
 import javafx.scene.layout.StackPane;
 import javafx.scene.image.ImageView;
-import Graphics.Pictures.Picture;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import Controls.Drafter;
+import Controls.Picture;
+import Controls.Mother;
+
 
 public class Main extends Application
 {
@@ -18,7 +20,7 @@ public class Main extends Application
 
   @Override
   public void start(Stage primaryStage) {
-    Picture picture = Picture.getInstance("pic.bmp");
+    Picture picture = Picture.getInstance("src/Images/pic.bmp");
 
     ImageView imgView = new ImageView(picture.getImage());
     primaryStage.setTitle("Load Image");
@@ -31,6 +33,7 @@ public class Main extends Application
     primaryStage.setScene(scene);
     primaryStage.show();
     Mother mother = new Mother();
+    Drafter drafter = new Drafter(mother.shapes());
   }
 
   public static void main(String[] args)

@@ -1,16 +1,20 @@
-package Graphics;
+package Controls;
 
-import Graphics.position.ColorLink;
-import Graphics.position.Position;
-import Graphics.Pictures.Picture;
+import utilities.PictureFiler;
+import utilities.ShapeFiler;
+import position.ColorLink;
+import position.Position;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import java.util.LinkedList;
 import java.util.ArrayList;
+import Objects.Shape;
 import java.util.List;
 
-import static Graphics.position.ColorLink.MASK;
-
+import static position.ColorLink.MASK;
+/*
+  Mother processes the creation of shape objects and creates doppelganger files.
+ */
 public class Mother {   //mother finds and creates shape files from the picture file
   Position position = new Position(0, 0);
   Picture picture = Picture.getInstance();
@@ -77,4 +81,5 @@ public class Mother {   //mother finds and creates shape files from the picture 
       }
     }
   }
+  public List<Shape> shapes() {return shapes;}
 }

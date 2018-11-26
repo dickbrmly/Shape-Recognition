@@ -1,14 +1,14 @@
-package Graphics.Pictures;
+package Controls;
 
-import static Graphics.position.ColorLink.MASK;
-import Graphics.position.Position;
+import static position.ColorLink.MASK;
+import Objects.Shape;
+import position.Position;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.image.*;
-import Graphics.Shape;
-
-import java.io.File;
 import java.util.List;
+import java.io.File;
+
 
 public class Picture
 {

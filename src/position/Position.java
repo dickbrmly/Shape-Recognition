@@ -1,6 +1,4 @@
-package Graphics.position;
-
-import javafx.geometry.Pos;
+package position;
 
 public class Position implements java.io.Serializable {
   //There are four quadrants in a circle and eight half quadrants.  It so

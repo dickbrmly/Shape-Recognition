@@ -1,4 +1,4 @@
-package Graphics;
+package utilities;
 
 import javafx.scene.image.WritableImage;
 import javafx.embed.swing.SwingFXUtils;
@@ -12,7 +12,7 @@ public class PictureFiler {
 
   String type;
 
-  PictureFiler(String type) {
+  public PictureFiler(String type) {
     this.type = type;
   }
 

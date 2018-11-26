@@ -1,4 +1,6 @@
-package Graphics;
+package utilities;
+
+import Objects.Shape;
 
 import java.io.*;
 
@@ -8,7 +10,7 @@ public class ShapeFiler {
     File file;
     ObjectOutputStream itemObject;
 
-    public void file(Shape item,int index) {
+    public void file(Shape item, int index) {
 
         try {
             file = new File("objects/object " + index + ".data");
