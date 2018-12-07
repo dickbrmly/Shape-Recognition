@@ -1,8 +1,9 @@
 package Controls;
 
-import static position.ColorLink.MASK;
+import static Utilities.ColorLink.MASK;
 import Objects.Shape;
-import position.Position;
+import Position.Position;
+import Utilities.ColorLink;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.image.*;
@@ -60,31 +61,35 @@ public class Picture
     return piece;
   }
 
-  public Color  getPixel(Position where)
+  public javafx.scene.paint.Color  getFxPixel(Position where)
   {
-    if(!checkMove(where)) return MASK;
+    if(!checkMove(where)) return MASK.getFxColor();
     return pixelReader.getColor(where.column,where.row);
   }
-  public Color  getPixel(int x, int y)
 
+  public java.awt.Color  getAwtPixel(Position where)
   {
-    return pixelReader.getColor(x,y);
+    if(!checkMove(where)) return MASK.getAwtColor();
+
+    return new ColorLink(pixelReader.getColor(where.column,where.row)).getAwtColor();
   }
 
-  public void setPixel(int x, int y, Color mask) { pixelWriter.setColor(x,y,mask); }
-  public void setPixel(Position where, Color mask) { pixelWriter.setColor(where.column,where.row,mask); }
+  public Color  getFxPixel(int x, int y) { return pixelReader.getColor(x,y); }
 
-  public void pixelDinner(Color background) {
+  public void setPixel(int x, int y, javafx.scene.paint.Color mask) { pixelWriter.setColor(x,y,mask); }
+  public void setPixel(Position where, javafx.scene.paint.Color mask) { pixelWriter.setColor(where.column,where.row,mask); }
+
+  public void pixelDinner(javafx.scene.paint.Color background) {
     for (int y = 0; y < height; y++)
       for (int x = 0; x < width; ++x)
-        if (this.getPixel(x,y).equals(background)) pixelWriter.setColor(x,y, MASK);
+        if (this.getFxPixel(x,y).equals(background)) pixelWriter.setColor(x,y, MASK.getFxColor());
   }
 
   public WritableImage pixelEatter(final Shape item, Color food)
   {
     WritableImage piece = new WritableImage(item.width() + 1, item.height() + 1);
     PixelWriter pixelChunk = piece.getPixelWriter();
-    List<Position> edge = item.getEdge();
+    List<Position> edge = item.positionList();
     Position left = new Position();
 
 
@@ -92,10 +97,10 @@ public class Picture
     {
       for (Position right : edge)
       {
-        if (right.row == x && this.getPixel(right.column + 1, right.row) != food)
+        if (right.row == x && this.getFxPixel(right.column + 1, right.row) != food)
         {
           left.makeEqual(right);
-          while (!this.getPixel(left.column - 1, left.row).equals(MASK)) --left.column;
+          while (!this.getFxPixel(left.column - 1, left.row).equals(MASK.getFxColor())) -- left.column;
           eatALine(left.column, right.column, right.row);
           for (int y = left.column; y <= right.column; y++)
             pixelChunk.setColor(y - item.x(),right.row - item.y(),Color.BLACK);
@@ -103,10 +108,10 @@ public class Picture
       }
       for (Position lft : edge)
       {
-        if (lft.row == x && this.getPixel(lft.column - 1, lft.row) != food)
+        if (lft.row == x && this.getFxPixel(lft.column - 1, lft.row) != food)
         {
           left.makeEqual(lft);
-          while (!this.getPixel(left.column + 1, left.row).equals(MASK)) ++left.column;
+          while (!this.getFxPixel(left.column + 1, left.row).equals(MASK.getFxColor())) ++left.column;
           eatALine(lft.column, left.column, lft.row);
           for (int y = lft.column; y <= left.column; y++)
             pixelChunk.setColor(y - item.x(),left.row - item.y(),Color.BLACK);
@@ -117,7 +122,7 @@ public class Picture
   }
 
     private void eatALine(int left,int right, int row) {
-    for (int x = left; x <= right; x++) pixelWriter.setColor(x,row,MASK);
+    for (int x = left; x <= right; x++) pixelWriter.setColor(x,row,MASK.getFxColor());
   }
 
   public boolean checkMove(Position move) {

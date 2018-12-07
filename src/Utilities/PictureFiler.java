@@ -1,4 +1,4 @@
-package utilities;
+package Utilities;
 
 import javafx.scene.image.WritableImage;
 import javafx.embed.swing.SwingFXUtils;

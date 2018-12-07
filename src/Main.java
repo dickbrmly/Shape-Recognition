@@ -4,22 +4,17 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
-import Controls.Drafter;
 import Controls.Picture;
 import Controls.Mother;
 
+public class Main extends Application {
 
-public class Main extends Application
-{
-
-  @Override
-  public void init()
-  {
+  @Override public void init() {
 
   }
 
-  @Override
-  public void start(Stage primaryStage) {
+  @Override public void start(Stage primaryStage) {
+
     Picture picture = Picture.getInstance("src/Images/pic.bmp");
 
     ImageView imgView = new ImageView(picture.getImage());
@@ -32,12 +27,10 @@ public class Main extends Application
     Scene scene = new Scene(sp);
     primaryStage.setScene(scene);
     primaryStage.show();
-    Mother mother = new Mother();
-    Drafter drafter = new Drafter(mother.shapes());
+    Mother mother = new Mother(); //mother gives birth to shapes found within an image
   }
-
-  public static void main(String[] args)
-  {
-    launch(args);
-  }
+    public static void main (String[]args)
+    {
+      launch(args);
+    }
 }

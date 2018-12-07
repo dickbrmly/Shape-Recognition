@@ -1,24 +1,27 @@
 package Objects;
 
-import position.Position;
-import Controls.Picture;
-import javafx.scene.paint.Color;
 import java.util.ArrayList;
+
+import Factories.VectorObjectFactory;
+import Position.Position;
+import Controls.Picture;
+
+import java.util.LinkedList;
 import java.util.List;
 /*
   Shape discovers itself after being gjven a single pixel location of itself.  Every shape has a shape object.
  */
-public class Shape implements java.io.Serializable {
+public class Shape  {
 
+  public ShapeData data = new ShapeData();;
   public int id;
   private Position minimum;
   private Position maximum;
   private Position start;
-
   private Position temp;
 
-  // happens that there are eight pixel positions from a pixel position as well. The angular
-  // change from a pixel position is therefore in pi/4 radian increments.
+  // happens that there are eight pixel positions from a pixel Position as well. The angular
+  // change from a pixel Position is therefore in pi/4 radian increments.
   /*
    *       Example single pixel move.
    *               6 7 8
@@ -26,12 +29,11 @@ public class Shape implements java.io.Serializable {
    *               4 3 2
    * */
 
+  // Vector objects created by Drafter.java
+
   Picture picture = Picture.getInstance();
 
   private boolean incompleteScan = true;
-  private double distribution;
-  private Color color;
-  public List<Position> edge = new ArrayList<Position>();
 
   private int surfaces;  //how many surfaces on the Shape?  Consider a line has one, a square has four etc...
 
@@ -42,13 +44,13 @@ public class Shape implements java.io.Serializable {
    *
    *  */
 
-  public Shape(final int id, Color color, Position position) {
+  public Shape(final int id, java.awt.Color color, Position position) {
 
     this.start = position;
-    edge.add(new Position(position)); //save initial position
+    data.edge.add(new Position(position)); //save initial Position
     Position beginning = new Position(position);
     Position move = new Position(position);
-    this.color = color;
+    data.color = color;
     this.id = id;
     move.quad = 1;
 
@@ -58,7 +60,7 @@ public class Shape implements java.io.Serializable {
     minimum = new Position(move);
     maximum = new Position(move);
     temp = new Position();
-    // We assume the previous position was back one column unless this is a left-most position.
+    // We assume the previous Position was back one column unless this is a left-most Position.
     // We are looking for a surface pixel in a clockwise pattern.
     //***********************************************************************************************************
     while (incompleteScan) { // There are one of seven possible moves
@@ -90,7 +92,7 @@ public class Shape implements java.io.Serializable {
           move.changeQuad(5);
           break;
       }
-      if (picture.checkMove(move) && picture.getPixel(move).equals(color)) {
+      if (picture.checkMove(move) && picture.getAwtPixel(move).equals(color)) {
 
         if (move.column < minimum.column) minimum.column = move.column;
         if (move.column > maximum.column) maximum.column = move.column;
@@ -98,18 +100,18 @@ public class Shape implements java.io.Serializable {
         if (move.row > maximum.row) maximum.row = move.row;
 
         if (move.equal(beginning)) incompleteScan = false;
-        edge.add(new Position(move));
+        data.edge.add(new Position(move));
       } else {
         move.makeEqual(temp);
         if (++move.quad > 8) move.quad = 1;
       }
     }
-    distribution = (double) area() / picture.getArea();
+    data.distribution = (double) area() / picture.getArea();
   }
 
-  public Color getColor()
+  public java.awt.Color getColor()
   {
-    return color;
+    return data.color;
   }
   public Position start() {
     return start;
@@ -120,13 +122,14 @@ public class Shape implements java.io.Serializable {
   public int y() {
     return minimum.row;
   }
+  public Position getMinimum() { return minimum; }
   public int maxRow() { return maximum.row; }
-  public List<Position> getEdge() { return edge; }
+  public ShapeData getData() { return data; }
+  public List<Position> positionList() { return data.edge; }
 
   public int width() {
     return maximum.column - minimum.column;
   }
-
   public int height() {
     return maximum.row - minimum.row;
   }
@@ -134,6 +137,15 @@ public class Shape implements java.io.Serializable {
   int area() {return width() * height();}
 
   double getDistribution() {
-    return distribution;
+    return data.distribution;
+  }
+
+  public class ShapeData implements java.io.Serializable {
+    public double distribution;
+    public java.awt.Color color;
+    public List<Position> edge = new ArrayList<Position>();
+
+    public List<VectorObjectFactory> vectorMap = new LinkedList();
+    public Position origin = new Position(0, 0);
   }
 }
