@@ -15,7 +15,6 @@ public class Position implements java.io.Serializable {
   public int row;
   public int quad;
 
-
   public Position() { }
 
   public Position(int x, int y, int quad) {
@@ -71,6 +70,7 @@ public class Position implements java.io.Serializable {
     this.row = row;
     this.quad = quad;
   }
+
   public boolean overEdge(int width, int height) { //determine if the Position is on an edge
     if (this.column < 0 || this.row < 0 || this.column > --width || this.row > --height) return true;
     else return false;
@@ -83,12 +83,17 @@ public class Position implements java.io.Serializable {
     return result;
   }
 
+  public double slope(Position that) {
+    return (double) (this.row - that.row) / (this.column - that.column);
+  }
+
   public Position subtract(Position additive) {
     Position result = new Position();
     result.column = this.column - additive.column;
     result.row = this.row - additive.row;
     return result;
   }
+
   public boolean equal(Position that) {
     if (this.column == that.column && this.row == that.row) return true;
     else return false;

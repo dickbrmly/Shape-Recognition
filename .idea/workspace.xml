@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4833072-afbb-4fb5-964a-9b5a7fd3f248" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Factories/ArchAssembly.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Factories/LineAssembly.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controls/Drafter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controls/Drafter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controls/Mother.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controls/Mother.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controls/Picture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controls/Picture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Factories/VectorObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factories/VectorObjectFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objects/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/position/ColorLink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilities/ColorLink.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/position/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Position/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilities/PictureFiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilities/PictureFiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilities/ShapeFiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilities/ShapeFiler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Position/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Position/Position.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,12 +24,16 @@
     <window id="1">
       <content type="file-editors">
         <state>
-          <leaf>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/Position/Position.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="1272">
-                    <caret line="127" column="14" lean-forward="true" selection-start-line="127" selection-start-column="14" selection-end-line="127" selection-end-column="14" />
+                  <state relative-caret-position="622">
+                    <caret line="87" column="3" selection-start-line="87" selection-start-column="3" selection-end-line="87" selection-end-column="3" />
+                    <folding>
+                      <element signature="e#2073#2074#0" expanded="true" />
+                      <element signature="e#2150#2151#0" expanded="true" />
+                    </folding>
                   </state>
                 </provider>
               </entry>
@@ -54,8 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controls/Drafter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1030">
-              <caret line="155" column="54" lean-forward="true" selection-start-line="155" selection-start-column="54" selection-end-line="155" selection-end-column="54" />
+            <state relative-caret-position="1048">
+              <caret line="153" column="2" selection-start-line="153" selection-start-column="2" selection-end-line="154" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,7 +60,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Factories/ArchAssembly.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="252">
               <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -90,7 +84,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controls/Mother.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1440">
+            <state relative-caret-position="1350">
               <caret line="86" selection-start-line="86" selection-end-line="86" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -143,7 +137,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="New_find_the_path_preventing_missed_pixels_on_90s" />
+        <entry key="$PROJECT_DIR$" value="New_Object_Carving_Method" />
       </map>
     </option>
   </component>
@@ -251,14 +245,83 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Production'; set:Production; class com.intellij.psi.search.scope.ProjectProductionScope">
+          <expand>
+            <path>
+              <item name="Shape Recognition" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="JavaFxApplication" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+            <path>
+              <item name="Shape Recognition" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="JavaFxApplication" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Shape Recognition" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="JavaFxApplication" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Graphics" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Shape Recognition" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="JavaFxApplication" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Graphics" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Pictures" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Shape Recognition" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="JavaFxApplication" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Graphics" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="position" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="Shape Recognition" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="JavaFxApplication" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+            <path>
+              <item name="Shape Recognition" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="JavaFxApplication" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Shape Recognition" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="JavaFxApplication" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Graphics" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Shape Recognition" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="JavaFxApplication" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Graphics" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Pictures" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Shape Recognition" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="JavaFxApplication" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Graphics" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="position" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="*Column&#9;PSI&#9;JAVA://javafx.scene.control.TableColumn&#10;Position.column&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543769159753" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544441062538" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -297,6 +360,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -339,7 +403,7 @@
       <workItem from="1543325119863" duration="1554000" />
       <workItem from="1543755644554" duration="2909000" />
       <workItem from="1543779717147" duration="883000" />
-      <workItem from="1543834501489" duration="11698000" />
+      <workItem from="1543834501489" duration="13527000" />
     </task>
     <task id="LOCAL-00001" summary="First shot at scanning for an object">
       <created>1540079413401</created>
@@ -453,11 +517,18 @@
       <option name="project" value="LOCAL" />
       <updated>1543236057117</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="using joystick equalize method to find curvature.">
+      <created>1544179423601</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1544179423601</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="336258000" />
+    <option name="totallyTimeSpent" value="367588000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2168" y="-506" width="1096" height="1896" extended-state="6" />
@@ -475,15 +546,15 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4989339" weight="0.32827735" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49573562" weight="0.31419286" />
-      <window_info active="true" anchor="bottom" x="0" y="23" width="1920" height="1017" id="Debug" order="3" type="WINDOWED" visible="true" weight="0.26674235" />
+      <window_info active="true" anchor="bottom" x="-1004" y="102" width="842" height="896" id="Debug" order="3" type="WINDOWED" visible="true" weight="0.26674235" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32973894" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.13110103" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.507722" side_tool="true" visible="true" weight="0.103918225" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49227798" weight="0.19909246" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5085379" side_tool="true" visible="true" weight="0.103918225" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4914621" weight="0.19869708" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -548,16 +619,17 @@
     <MESSAGE value="Beginning work on Object filer." />
     <MESSAGE value="Object filtration completed---now only offers object shapes found in files." />
     <MESSAGE value="beginnings of vector detection" />
-    <option name="LAST_COMMIT_MESSAGE" value="beginnings of vector detection" />
+    <MESSAGE value="using joystick equalize method to find curvature." />
+    <option name="LAST_COMMIT_MESSAGE" value="using joystick equalize method to find curvature." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controls/Drafter.java</url>
-          <line>173</line>
+          <line>168</line>
           <properties />
-          <option name="timeStamp" value="123" />
+          <option name="timeStamp" value="127" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -565,13 +637,15 @@
       <configuration name="Application">
         <watch expression="shapes" language="JAVA" />
         <watch expression="((ShapeData)((Shape)((LinkedList)((Mother)this).shapes).get(1)).data).vectorMap" custom="Objects.Shape.ShapeData,java.util.LinkedList,Controls.Mother,Objects.Shape" />
+        <watch expression="tail" />
+        <watch expression="head.column" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">
       <expression>
-        <expression-string>1</expression-string>
+        <expression-string>5</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -581,12 +655,12 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>5</expression-string>
+        <expression-string>0</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>0</expression-string>
+        <expression-string>1</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -777,7 +851,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Factories/ArchAssembly.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="252">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -787,7 +861,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controls/Mother.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
+        <state relative-caret-position="1350">
           <caret line="86" selection-start-line="86" selection-end-line="86" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -797,15 +871,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Position/Position.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1272">
-          <caret line="127" column="14" lean-forward="true" selection-start-line="127" selection-start-column="14" selection-end-line="127" selection-end-column="14" />
+        <state relative-caret-position="622">
+          <caret line="87" column="3" selection-start-line="87" selection-start-column="3" selection-end-line="87" selection-end-column="3" />
+          <folding>
+            <element signature="e#2073#2074#0" expanded="true" />
+            <element signature="e#2150#2151#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controls/Drafter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1030">
-          <caret line="155" column="54" lean-forward="true" selection-start-line="155" selection-start-column="54" selection-end-line="155" selection-end-column="54" />
+        <state relative-caret-position="1048">
+          <caret line="153" column="2" selection-start-line="153" selection-start-column="2" selection-end-line="154" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
