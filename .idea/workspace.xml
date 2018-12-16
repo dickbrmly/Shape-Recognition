@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/Objects/Shape.java" line="130" />
+    <bookmark url="file://$PROJECT_DIR$/src/Controls/ShapeFinder.java" line="2" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4833072-afbb-4fb5-964a-9b5a7fd3f248" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controls/ArchDrafter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controls/ShapeFinder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controls/Drafter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controls/Drafter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Position/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Position/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controls/Drafter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controls/LineDrafter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controls/Mother.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controls/Mother.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controls/Picture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controls/Picture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Factories/ArchAssembly.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factories/ArchAssembly.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Factories/LineAssembly.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factories/LineAssembly.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Factories/VectorObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factories/VectorObjectFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utilities/ShapeFiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilities/ShapeFiler.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,15 +33,133 @@
     <window id="1">
       <content type="file-editors">
         <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <leaf>
             <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/Controls/LineDrafter.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="1026">
+                    <caret line="57" selection-start-line="57" selection-end-line="57" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/Position/Position.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="622">
-                    <caret line="87" column="3" selection-start-line="87" selection-start-column="3" selection-end-line="87" selection-end-column="3" />
+                  <state relative-caret-position="570">
+                    <caret line="42" selection-start-line="42" selection-end-line="42" />
                     <folding>
                       <element signature="e#2073#2074#0" expanded="true" />
                       <element signature="e#2150#2151#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/Controls/ShapeFinder.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="1728">
+                    <caret line="96" column="1" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                      <element signature="e#600#601#0" expanded="true" />
+                      <element signature="e#632#633#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/Controls/Picture.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="1566">
+                    <caret line="120" selection-start-line="120" selection-end-line="120" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/Main.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="540">
+                    <caret line="30" selection-start-line="30" selection-end-line="30" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/Controls/LineDrafter.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="1458">
+                    <caret line="81" column="82" lean-forward="true" selection-start-line="81" selection-start-column="82" selection-end-line="81" selection-end-column="82" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/Factories/LineAssembly.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="90">
+                    <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/Factories/VectorObjectFactory.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="198">
+                    <caret line="11" column="72" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="72" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/Factories/ArchAssembly.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="180">
+                    <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/Controls/ArchDrafter.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="378">
+                    <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
                     </folding>
                   </state>
                 </provider>
@@ -45,35 +172,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Position/Position.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="756">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
+              <folding>
+                <element signature="e#2073#2074#0" expanded="true" />
+                <element signature="e#2150#2151#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controls/ShapeFinder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#581#582#0" expanded="true" />
+                <element signature="e#607#608#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Objects/Shape.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="22" column="79" selection-start-line="22" selection-start-column="79" selection-end-line="22" selection-end-column="79" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controls/Drafter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1048">
-              <caret line="153" column="2" selection-start-line="153" selection-start-column="2" selection-end-line="154" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Factories/ArchAssembly.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Factories/LineAssembly.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+            <state relative-caret-position="468">
+              <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,8 +226,56 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controls/Mother.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1350">
-              <caret line="86" selection-start-line="86" selection-end-line="86" />
+            <state relative-caret-position="1130">
+              <caret line="85" column="53" selection-start-line="85" selection-start-column="53" selection-end-line="85" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Factories/ArchAssembly.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controls/Picture.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="464">
+              <caret line="105" selection-start-line="105" selection-end-line="105" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controls/LineDrafter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1220">
+              <caret line="81" selection-start-line="81" selection-end-line="81" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controls/ArchDrafter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -122,6 +312,9 @@
       <find>&lt;Position&gt;</find>
       <find>getedge</find>
       <find>Color</find>
+      <find>id</find>
+      <find>add(head)</find>
+      <find>stub</find>
     </findStrings>
     <replaceStrings>
       <replace>position</replace>
@@ -131,7 +324,11 @@
       <replace>this</replace>
       <replace>Shape</replace>
       <replace>item</replace>
+      <replace>add(new Position(head)</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>D:\Dropbox\IdeaProjects\Shape Recognition\src</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -172,24 +369,29 @@
         <option value="$PROJECT_DIR$/src/Utilities/ColorConverter.java" />
         <option value="$PROJECT_DIR$/src/Position/ColorLink.java" />
         <option value="$PROJECT_DIR$/src/Utilities/ColorLink.java" />
-        <option value="$PROJECT_DIR$/src/Controls/Picture.java" />
+        <option value="$PROJECT_DIR$/src/Position/Position.java" />
+        <option value="$PROJECT_DIR$/src/Objects/Shaper.java" />
         <option value="$PROJECT_DIR$/src/Utilities/ShapeFiler.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/Objects/Shape.java" />
+        <option value="$PROJECT_DIR$/src/Controls/Picture.java" />
+        <option value="$PROJECT_DIR$/src/Controls/Shaper.java" />
+        <option value="$PROJECT_DIR$/src/Controls/ShapeFinder.java" />
+        <option value="$PROJECT_DIR$/src/Controls/Drafter.java" />
         <option value="$PROJECT_DIR$/src/Controls/Mother.java" />
+        <option value="$PROJECT_DIR$/src/Controls/ArchDrafter.java" />
+        <option value="$PROJECT_DIR$/src/Objects/Shape.java" />
+        <option value="$PROJECT_DIR$/src/Factories/LineAssembly.java" />
+        <option value="$PROJECT_DIR$/src/Controls/LineDrafter.java" />
         <option value="$PROJECT_DIR$/src/Factories/VectorObjectFactory.java" />
         <option value="$PROJECT_DIR$/src/Factories/ArchAssembly.java" />
-        <option value="$PROJECT_DIR$/src/Factories/LineAssembly.java" />
-        <option value="$PROJECT_DIR$/src/Position/Position.java" />
-        <option value="$PROJECT_DIR$/src/Controls/Drafter.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-2168" />
-    <option name="y" value="-506" />
+    <option name="x" value="-2098" />
+    <option name="y" value="-513" />
     <option name="width" value="1096" />
-    <option name="height" value="1896" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -216,34 +418,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Shape Recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shape Recognition" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Shape Recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shape Recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Shape Recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shape Recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controls" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Shape Recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shape Recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Position" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Production'; set:Production; class com.intellij.psi.search.scope.ProjectProductionScope">
@@ -315,13 +489,59 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Shape Recognition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shape Recognition" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shape Recognition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shape Recognition" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shape Recognition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shape Recognition" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Controls" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shape Recognition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shape Recognition" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Factories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shape Recognition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shape Recognition" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Objects" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shape Recognition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shape Recognition" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Position" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shape Recognition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shape Recognition" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Utilities" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="*Column&#9;PSI&#9;JAVA://javafx.scene.control.TableColumn&#10;Position.column&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544441062538" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544966365025" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -404,6 +624,7 @@
       <workItem from="1543755644554" duration="2909000" />
       <workItem from="1543779717147" duration="883000" />
       <workItem from="1543834501489" duration="13527000" />
+      <workItem from="1544683525734" duration="43336000" />
     </task>
     <task id="LOCAL-00001" summary="First shot at scanning for an object">
       <created>1540079413401</created>
@@ -524,17 +745,24 @@
       <option name="project" value="LOCAL" />
       <updated>1544179423601</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Curvature calculations completed.">
+      <created>1544441100421</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1544441100421</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="367588000" />
+    <option name="totallyTimeSpent" value="418151000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2168" y="-506" width="1096" height="1896" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.43713734" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.4458414" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -544,17 +772,17 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info id="simpleUML" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4989339" weight="0.32827735" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49573562" weight="0.31419286" />
-      <window_info active="true" anchor="bottom" x="-1004" y="102" width="842" height="896" id="Debug" order="3" type="WINDOWED" visible="true" weight="0.26674235" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49839914" weight="0.32790446" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49516442" visible="true" weight="0.1641113" />
+      <window_info anchor="bottom" x="-4064" y="47" width="910" height="896" id="Debug" order="3" type="WINDOWED" visible="true" weight="0.26674235" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32973894" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.13110103" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5085379" side_tool="true" visible="true" weight="0.103918225" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4914621" weight="0.19869708" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5048356" side_tool="true" visible="true" weight="0.1641113" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.48879403" weight="0.19869708" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -620,16 +848,17 @@
     <MESSAGE value="Object filtration completed---now only offers object shapes found in files." />
     <MESSAGE value="beginnings of vector detection" />
     <MESSAGE value="using joystick equalize method to find curvature." />
-    <option name="LAST_COMMIT_MESSAGE" value="using joystick equalize method to find curvature." />
+    <MESSAGE value="Curvature calculations completed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Curvature calculations completed." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Controls/Drafter.java</url>
-          <line>168</line>
+          <url>file://$PROJECT_DIR$/src/Controls/Mother.java</url>
+          <line>87</line>
           <properties />
-          <option name="timeStamp" value="127" />
+          <option name="timeStamp" value="188" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -639,6 +868,10 @@
         <watch expression="((ShapeData)((Shape)((LinkedList)((Mother)this).shapes).get(1)).data).vectorMap" custom="Objects.Shape.ShapeData,java.util.LinkedList,Controls.Mother,Objects.Shape" />
         <watch expression="tail" />
         <watch expression="head.column" language="JAVA" />
+        <watch expression="item.this$0" />
+        <watch expression="((LineAssembly)item.vectorMap.get(0)).length" custom="Factories.LineAssembly" />
+        <watch expression="((LineAssembly)item.vectorMap.get(0)).length" language="JAVA" custom="Factories.LineAssembly" />
+        <watch expression="item.vectorMap.get(11)" />
       </configuration>
     </watches-manager>
   </component>
@@ -692,9 +925,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Graphics/position/TwoD.java" />
-    <entry file="file://$PROJECT_DIR$/src/Graphics/ColorPalete.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/scene/control/TableColumn.java" />
     <entry file="file://$PROJECT_DIR$/src/Graphics/Pictures/pic.gif" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/rt.jar!/java/security/AccessController.class" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/rt.jar!/java/awt/Color.class" />
@@ -727,37 +957,10 @@
     <entry file="file://$PROJECT_DIR$/src/Factories/ShapeRecognition.ucp" />
     <entry file="file://$PROJECT_DIR$/src/Utilities/ColorConverter.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/com/sun/javafx/application/LauncherImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/Utilities/ColorLink.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="41" column="11" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utilities/ShapeFiler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Utilities/PictureFiler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controls/Picture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-670">
-          <caret line="91" column="34" selection-start-line="91" selection-start-column="34" selection-end-line="91" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -775,20 +978,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/stage/Window.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/beans/property/ObjectPropertyBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20700">
-          <caret line="1308" selection-start-line="1308" selection-end-line="1308" />
-          <folding>
-            <element signature="e#47191#47192#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1764">
+          <caret line="131" selection-start-line="131" selection-end-line="131" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/rt.jar!/java/util/LinkedList.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="271" selection-start-line="271" selection-end-line="271" />
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/scene/Scene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7578">
-          <caret line="523" selection-start-line="523" selection-end-line="523" />
+        <state relative-caret-position="555">
+          <caret line="2380" selection-start-line="2380" selection-end-line="2380" />
           <folding>
             <element signature="e#39846#39847#0" expanded="true" />
             <element signature="e#39901#39902#0" expanded="true" />
@@ -798,71 +1005,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/beans/property/ObjectPropertyBase.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/rt.jar!/java/util/List.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1764">
-          <caret line="131" selection-start-line="131" selection-end-line="131" />
+        <state relative-caret-position="108">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/stage/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="654">
+          <caret line="101" selection-start-line="101" selection-end-line="101" />
+          <folding>
+            <element signature="e#47191#47192#0" expanded="true" />
+            <element signature="e#47222#47223#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/image 5.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/image 8.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/image 7.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/image 6.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/image 16.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/objects/object 9.data">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/image 17.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utilities/ColorLink.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utilities/ShapeFiler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controls/Picture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="105" selection-start-line="105" selection-end-line="105" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="540">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#889#890#0" expanded="true" />
-            <element signature="e#915#916#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Objects/Shape.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="74" column="16" lean-forward="true" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
+        <state relative-caret-position="396">
+          <caret line="22" column="79" selection-start-line="22" selection-start-column="79" selection-end-line="22" selection-end-column="79" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Factories/VectorObjectFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/Controls/ShapeFinder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="126">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#575#576#0" expanded="true" />
-            <element signature="e#593#594#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Factories/LineAssembly.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Factories/ArchAssembly.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#581#582#0" expanded="true" />
+            <element signature="e#607#608#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controls/Mother.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="86" selection-start-line="86" selection-end-line="86" />
+        <state relative-caret-position="1130">
+          <caret line="85" column="53" selection-start-line="85" selection-start-column="53" selection-end-line="85" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -871,8 +1115,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Position/Position.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="87" column="3" selection-start-line="87" selection-start-column="3" selection-end-line="87" selection-end-column="3" />
+        <state relative-caret-position="756">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
           <folding>
             <element signature="e#2073#2074#0" expanded="true" />
             <element signature="e#2150#2151#0" expanded="true" />
@@ -880,10 +1124,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controls/Drafter.java">
+    <entry file="file://$PROJECT_DIR$/src/Controls/ArchDrafter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1048">
-          <caret line="153" column="2" selection-start-line="153" selection-start-column="2" selection-end-line="154" selection-end-column="37" />
+        <state relative-caret-position="378">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controls/LineDrafter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1220">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Factories/VectorObjectFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="72" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Factories/ArchAssembly.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Factories/LineAssembly.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -4,13 +4,18 @@ import Objects.Shape;
 
 import java.io.*;
 
+/**
+ * ShapeFiler recieves a shape to record in its object
+ * format.  To do would be: reading new objects
+ */
+
 public class ShapeFiler {
 
     FileOutputStream record = null;
     File file;
     ObjectOutputStream itemObject;
 
-    public void file(Shape.ShapeData item, int index) {
+    public void file(Shape item, int index) {
 
             int whole = (int) item.distribution;
             int fraction = (int) (item.distribution - whole) * 100;

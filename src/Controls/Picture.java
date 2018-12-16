@@ -1,19 +1,18 @@
 package Controls;
 
 import static Utilities.ColorLink.MASK;
-import Objects.Shape;
-import Position.Position;
-import Utilities.ColorLink;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.image.*;
+import Utilities.ColorLink;
+import Position.Position;
 import java.util.List;
+import Objects.Shape;
 import java.io.File;
 
 
 public class Picture
 {
-  private static Picture instance;
   private int width = 0;
   private int height = 0;
   private int colorCount = 0;
@@ -22,7 +21,7 @@ public class Picture
   PixelReader pixelReader;
   PixelWriter pixelWriter;
 
-  private Picture(String imageFile)
+  public Picture(String imageFile)
   {
     Image interim;
 
@@ -51,13 +50,13 @@ public class Picture
 
   public WritableImage getImage(Shape shape)
   {
-    WritableImage piece = new WritableImage(shape.width(), shape.height());
+    WritableImage piece = new WritableImage(shape.width, shape.height);
     PixelWriter pixelChunk = piece.getPixelWriter();
-    byte[] buffer = new byte[shape.width() * shape.height() * 4];
-    pixelReader.getPixels(shape.x(),shape.y(),shape.width(),shape.height(),PixelFormat.getByteBgraInstance(),
-        buffer,0,shape.width() * 4);
-    pixelChunk.setPixels(0,0,shape.width(),shape.height(),PixelFormat.getByteBgraInstance(),buffer,
-        0,shape.width() * 4);
+    byte[] buffer = new byte[shape.width * shape.height * 4];
+    pixelReader.getPixels(shape.Minimum.column,shape.Minimum.row,shape.width,shape.height,PixelFormat.getByteBgraInstance(),
+        buffer,0,shape.width * 4);
+    pixelChunk.setPixels(0,0,shape.width,shape.height,PixelFormat.getByteBgraInstance(),buffer,
+        0,shape.width * 4);
     return piece;
   }
 
@@ -87,13 +86,14 @@ public class Picture
 
   public WritableImage pixelEatter(final Shape item, Color food)
   {
-    WritableImage piece = new WritableImage(item.width() + 1, item.height() + 1);
+    int lastRow = item.height + item.Minimum.row;
+    WritableImage piece = new WritableImage(item.width + 1, item.height + 1);
     PixelWriter pixelChunk = piece.getPixelWriter();
-    List<Position> edge = item.positionList();
+    List<Position> edge = item.edge;
     Position left = new Position();
 
 
-    for (int x = item.y(); x <= item.maxRow(); ++x)
+    for (int x = item.Minimum.row; x <= lastRow; ++x)
     {
       for (Position right : edge)
       {
@@ -103,7 +103,7 @@ public class Picture
           while (!this.getFxPixel(left.column - 1, left.row).equals(MASK.getFxColor())) -- left.column;
           eatALine(left.column, right.column, right.row);
           for (int y = left.column; y <= right.column; y++)
-            pixelChunk.setColor(y - item.x(),right.row - item.y(),Color.BLACK);
+            pixelChunk.setColor(y - item.Minimum.column,right.row - item.Minimum.row,Color.BLACK);
         }
       }
       for (Position lft : edge)
@@ -114,7 +114,7 @@ public class Picture
           while (!this.getFxPixel(left.column + 1, left.row).equals(MASK.getFxColor())) ++left.column;
           eatALine(lft.column, left.column, lft.row);
           for (int y = lft.column; y <= left.column; y++)
-            pixelChunk.setColor(y - item.x(),left.row - item.y(),Color.BLACK);
+            pixelChunk.setColor(y - item.Minimum.column,left.row - item.Minimum.row,Color.BLACK);
         }
       }
     }
@@ -137,14 +137,6 @@ public class Picture
   public WritableImage getImage() { return image; }
   public int getWidth() {return width;}
   public int getHeight() {return height;}
-  //Singleton double instance method to accommodate file name passing
-  public static Picture getInstance() { return instance; }
-  public static Picture getInstance(String theFile)
-  {
-    if (instance == null) instance = new Picture(theFile);
-    return instance;
-  }
-
 }
 
 

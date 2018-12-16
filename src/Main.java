@@ -15,19 +15,20 @@ public class Main extends Application {
 
   @Override public void start(Stage primaryStage) {
 
-    Picture picture = Picture.getInstance("src/Images/pic.bmp");
-
+    Picture picture = new Picture("src/Images/pic.bmp");
     ImageView imgView = new ImageView(picture.getImage());
     primaryStage.setTitle("Load Image");
     primaryStage.setResizable(false);
     StackPane sp = new StackPane();
     sp.getChildren().add(imgView);
 
-    //Adding HBox to the scene
+    /* Adding HBox to the scene
     Scene scene = new Scene(sp);
     primaryStage.setScene(scene);
-    primaryStage.show();
-    Mother mother = new Mother(); //mother gives birth to shapes found within an image
+    primaryStage.show();  */
+
+    //mother gives birth to shapes found within an image
+    Mother mother = new Mother(picture);
   }
     public static void main (String[]args)
     {
