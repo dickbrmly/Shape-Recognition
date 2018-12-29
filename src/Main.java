@@ -21,17 +21,15 @@ public class Main extends Application {
     primaryStage.setResizable(false);
     StackPane sp = new StackPane();
     sp.getChildren().add(imgView);
-
-    /* Adding HBox to the scene
     Scene scene = new Scene(sp);
     primaryStage.setScene(scene);
-    primaryStage.show();  */
+    primaryStage.show();
+
 
     //mother gives birth to shapes found within an image
     Mother mother = new Mother(picture);
+    primaryStage.close();
   }
-    public static void main (String[]args)
-    {
-      launch(args);
-    }
+    public static void main (String[]args) { launch(args); }
+
 }

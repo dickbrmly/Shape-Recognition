@@ -13,10 +13,10 @@ import java.io.File;
 
 public class Picture
 {
-  private int width = 0;
-  private int height = 0;
-  private int colorCount = 0;
-  private Position maximum;
+  public int width = 0;
+  public int height = 0;
+  public int colorCount = 0;
+  public Position maximum;
   private final WritableImage image;
   PixelReader pixelReader;
   PixelWriter pixelWriter;
@@ -92,7 +92,6 @@ public class Picture
     List<Position> edge = item.edge;
     Position left = new Position();
 
-
     for (int x = item.Minimum.row; x <= lastRow; ++x)
     {
       for (Position right : edge)
@@ -121,7 +120,7 @@ public class Picture
     return piece;
   }
 
-    private void eatALine(int left,int right, int row) {
+  private void eatALine(int left,int right, int row) {
     for (int x = left; x <= right; x++) pixelWriter.setColor(x,row,MASK.getFxColor());
   }
 
@@ -132,11 +131,7 @@ public class Picture
   }
 
   public int getArea() { return width * height; }
-  public void setColorCount(int colorCount) { this.colorCount = colorCount; }
-  public int getColorCount() { return colorCount; }
   public WritableImage getImage() { return image; }
-  public int getWidth() {return width;}
-  public int getHeight() {return height;}
 }
 
 

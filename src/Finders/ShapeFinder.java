@@ -1,5 +1,6 @@
-package Controls;
+package Finders;
 
+import Controls.Picture;
 import Position.Position;
 import Objects.Shape;
 /*
@@ -32,6 +33,7 @@ public class ShapeFinder {
 
   public Shape discover(java.awt.Color color, Position position) {
     boolean incompleteScan = true;
+    int quadCount = 0;
     Position minimum = new Position(position);
     Position maximum = new Position(position);
     Position temp = new Position();
@@ -51,31 +53,39 @@ public class ShapeFinder {
       switch (move.quad) {
         case 1:
           move.changeQuad(6);
+          quadCount++;
           break;
         case 2:
           move.changeQuad(7);
+          quadCount++;
           break;
         case 3:
           move.changeQuad(8);
+          quadCount++;
           break;
         case 4:
           move.changeQuad(1);
+          quadCount++;
           break;
         case 5:
           move.changeQuad(2);
+          quadCount++;
           break;
         case 6:
           move.changeQuad(3);
+          quadCount++;
           break;
         case 7:
           move.changeQuad(4);
+          quadCount++;
           break;
         default:
           move.changeQuad(5);
+          quadCount++;
           break;
       }
       if (picture.checkMove(move) && picture.getAwtPixel(move).equals(color)) {
-
+        quadCount = 0;
         if (move.column < minimum.column) minimum.column = move.column;
         if (move.column > maximum.column) maximum.column = move.column;
         if (move.row < minimum.row) minimum.row = move.row;
@@ -87,6 +97,7 @@ public class ShapeFinder {
         move.makeEqual(temp);
         if (++move.quad > 8) move.quad = 1;
       }
+      if(quadCount == 8)incompleteScan = false;
     }
     data.Minimum.makeEqual(minimum);
     data.width = maximum.column - minimum.column;

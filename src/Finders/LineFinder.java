@@ -1,15 +1,18 @@
-package Controls;
+package Finders;
 
-import Factories.VectorObjectFactory;
+import Assemblies.LineAssembly;
+import Assemblies.VectorObjectAssembly;
 import Objects.Shape;
 import Position.Position;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 
-public class LineDrafter {
-  public LineDrafter() {
+public class LineFinder {
+  public LineFinder() {
 
   }
 
@@ -23,7 +26,6 @@ public class LineDrafter {
     int distance = 0;
 
     Position vectorOffset = new Position(0, 0, 0);
-    Position origin = new Position();
     Position head = new Position(0, 0, 0);
     Position middle = new Position(0, 0, 0);
     Position tail = new Position(0, 0, 0);
@@ -55,7 +57,7 @@ public class LineDrafter {
             stateMachine = 3;
             break;
           }
-          item.vectorMap.add(new VectorObjectFactory().get("line", line, origin,0,line.get(0)));
+          item.vectorMap.add(new LineAssembly(line));
           line.clear();
           line.add(new Position(head));
           tail.makeEqual(head);
@@ -71,7 +73,7 @@ public class LineDrafter {
           }
 
         case 4:
-          item.vectorMap.add(new VectorObjectFactory().get("line", line, origin,0,line.get(0)));
+          item.vectorMap.add(new LineAssembly(line));
           line.clear();
           line.add(new Position(head));
           tail.makeEqual(head);
@@ -79,7 +81,7 @@ public class LineDrafter {
           stateMachine = 1;
           break;
       }
-      item.vectorMap.add(new VectorObjectFactory().get("line", line, item.Minimum,0,line.get(0)));
     }
+    if(line.size() > 1) item.vectorMap.add(new LineAssembly(line));
   }
 }

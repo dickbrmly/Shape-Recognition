@@ -71,6 +71,11 @@ public class Position implements java.io.Serializable {
     this.quad = quad;
   }
 
+  public void average(Position that) {
+    this.row = (this.row + that.row) / 2;
+    this.column = (this.column + that.column) / 2;
+  }
+
   public boolean overEdge(int width, int height) { //determine if the Position is on an edge
     if (this.column < 0 || this.row < 0 || this.column > --width || this.row > --height) return true;
     else return false;
